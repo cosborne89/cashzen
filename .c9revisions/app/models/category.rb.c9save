@@ -1,0 +1,2 @@
+{"ts":1378750065941,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class Category < ActiveRecord::Base\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":40}]],"length":40}
+{"contributors":[],"silentsave":false,"ts":1378750111669,"patch":[[{"diffs":[[0,"d::Base\n"],[1,"    belongs_to :user\n    has_many :transactions\n"],[0,"end\n"]],"start1":28,"start2":28,"length1":12,"length2":60}]],"length":88,"saved":false}

@@ -1,0 +1,3 @@
+{"ts":1378750478373,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class AddColumnsToUser < ActiveRecord::Migration\n  def change\n    add_column :users, :category_ids, :text\n    add_column :users, :transaction_ids, :text\n  end\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":163}]],"length":163}
+{"contributors":[],"silentsave":false,"ts":1378750492678,"patch":[[{"diffs":[[0,", :text\n"],[1,"    add_column :transaction, :user_id, :integer\n"],[0,"  end\nen"]],"start1":145,"start2":145,"length1":16,"length2":64}]],"length":211,"saved":false}
+{"ts":1378750566697,"patch":[[{"diffs":[[0,"nsaction"],[1,"s"],[0,", :user_"]],"start1":172,"start2":172,"length1":16,"length2":17}]],"length":212,"saved":false}

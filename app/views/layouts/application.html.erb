@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baseline</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+    <div class="banner">
+        <h1>The Critical Few, Inc.</h1>
+        <p class="notice"><%= notice %></p>                                                                                                                                                                                                         
+        <p class="alert"><%= alert %></p> 
+    </div>
+    <div class="content">
+        <%= yield %>
+    </div>
+    <div class="banner">
+        <% if can? :manage, :all %>
+            <ul>
+            	<li><%= link_to current_user.username, user_path(current_user) %>'s Dashboard (is <%= current_user.role %>):</li>
+                <li><%= link_to "Edit my registration", edit_user_registration_path(current_user) %></li>
+            	<li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li> 
+            </ul>
+            <% elsif user_signed_in? %>
+            <ul>
+            	<li><%= link_to current_user.username, user_path(current_user) %>'s Dashboard (is <%= current_user.role %>): </li>
+                <li><%= link_to "Edit my registration", edit_user_registration_path(current_user) %></li>
+            	<li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            </ul>
+            <% else %>
+            <%= link_to 'Login', login_url %> | <%= link_to 'Sign Up', new_user_registration_url %>
+        
+        <% end %>
+    </div>
+</div>
+</body>
+</html>

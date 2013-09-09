@@ -1,0 +1,4 @@
+{"ts":1378750066647,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class Transaction < ActiveRecord::Base\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":43}]],"length":43}
+{"contributors":[],"silentsave":false,"ts":1378750082554,"patch":[[{"diffs":[[0,"d::Base\n"],[1,"    has_one :category\n    has_one :user, :through => :category\n"],[0,"end\n"]],"start1":31,"start2":31,"length1":12,"length2":75}]],"length":106,"saved":false}
+{"ts":1378750102413,"patch":[[{"diffs":[[0,"ase\n    "],[-1,"has_one"],[1,"belongs_to"],[0," :catego"]],"start1":35,"start2":35,"length1":23,"length2":26},{"diffs":[[0,"    "],[-1,"has_one"],[1,"belongs_to"],[0," :us"]],"start1":64,"start2":64,"length1":15,"length2":18}]],"length":112,"saved":false}
+{"ts":1378750752972,"patch":[[{"diffs":[[0,"user"],[-1,", :through => :category"],[0,"\nend"]],"start1":80,"start2":80,"length1":31,"length2":8}]],"length":89,"saved":false}

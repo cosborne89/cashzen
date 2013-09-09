@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  monthly_spend: 9.99
+  transaction_ids: MyText
+  reset_on: 1
+  net_cash: 9.99
+  user_id: 1
+  spree: false
+
+two:
+  title: MyString
+  monthly_spend: 9.99
+  transaction_ids: MyText
+  reset_on: 1
+  net_cash: 9.99
+  user_id: 1
+  spree: false

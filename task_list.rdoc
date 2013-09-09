@@ -1,0 +1,8 @@
+#task list
+
+X implement bourbon: go to github and make changes following install
+X implement devise: create a User model and devise_for user
+X implement cancan: create an Ability model
+_ implement omniauth: create an Identity model for omniauth-identity and plug omniauth-google and omniauth-identity into devise
+X implement neat: go to github and make changes following install
+_ 

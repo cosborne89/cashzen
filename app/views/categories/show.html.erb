@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @category.title %>
+</p>
+
+<p>
+  <strong>Monthly spend:</strong>
+  <%= @category.monthly_spend %>
+</p>
+
+<p>
+  <strong>Transactions:</strong>
+  <ul>
+    <% @category.transactions.each do |transaction| %>
+      <li><%= transaction.title%> - <%= transaction.amount %></li>
+    <% end %>  
+  </ul>
+</p>
+
+<p>
+  <strong>Reset on:</strong>
+  <%= @category.reset_on %>
+</p>
+
+<p>
+  <strong>Net cash:</strong>
+  <%= @category.net_cash %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @category.user_id %>
+</p>
+
+<p>
+  <strong>Spree:</strong>
+  <%= @category.spree %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

@@ -1,0 +1,39 @@
+<h1>Listing categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Monthly spend</th>
+      <th>Transaction ids</th>
+      <th>Reset on</th>
+      <th>Net cash</th>
+      <th>User</th>
+      <th>Spree</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.title %></td>
+        <td><%= category.monthly_spend %></td>
+        <td><%= category.transaction_ids %></td>
+        <td><%= category.reset_on %></td>
+        <td><%= category.net_cash %></td>
+        <td><%= category.user_id %></td>
+        <td><%= category.spree %></td>
+        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>
