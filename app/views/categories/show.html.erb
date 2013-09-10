@@ -11,10 +11,15 @@
 </p>
 
 <p>
+  <strong>Monthly Remaining:</strong>
+  <%= @category.monthly_remaining %>
+</p>
+
+<p>
   <strong>Transactions:</strong>
   <ul>
     <% @category.transactions.each do |transaction| %>
-      <li><%= transaction.title%> - <%= transaction.amount %></li>
+      <li><%= link_to transaction.title, transaction%> - <%= transaction.amount %></li>
     <% end %>  
   </ul>
 </p>

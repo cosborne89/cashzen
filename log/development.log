@@ -1930,3 +1930,757 @@ Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-09 14:22:
 
 
 Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-09 14:22:18 -0400
+
+
+Started GET "/" for 127.5.144.1 at 2013-09-10 12:09:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#welcome as HTML
+  Rendered pages/welcome.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 3611ms (Views: 3212.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:09:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:23 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:23 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:23 -0400
+
+
+Started GET "/login" for 127.5.144.1 at 2013-09-10 12:09:27 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (14.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (584.5ms)
+Completed 200 OK in 788ms (Views: 768.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:09:28 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:28 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:28 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:29 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:29 -0400
+
+
+Started GET "/categories" for 127.5.144.1 at 2013-09-10 12:09:33 -0400
+Processing by CategoriesController#index as HTML
+Completed 500 Internal Server Error in 9ms
+
+NoMethodError (undefined method `categories' for nil:NilClass):
+  app/controllers/categories_controller.rb:7:in `index'
+
+
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.1ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (138.0ms)
+
+
+Started GET "/login" for 127.5.144.1 at 2013-09-10 12:09:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 113ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:38 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:38 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:38 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:09:38 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:38 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:38 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:09:38 -0400
+
+
+Started GET "/categories" for 127.5.144.1 at 2013-09-10 12:10:11 -0400
+Processing by CategoriesController#index as HTML
+Completed 500 Internal Server Error in 4890ms
+
+NoMethodError (undefined method `categories' for nil:NilClass):
+  app/controllers/categories_controller.rb:8:in `index'
+
+
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (36.0ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (41.7ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (495.6ms)
+
+
+Started GET "/categories" for 127.5.144.1 at 2013-09-10 12:13:16 -0400
+Processing by CategoriesController#index as HTML
+Completed 401 Unauthorized in 8ms
+
+
+Started GET "/users/sign_in" for 127.5.144.1 at 2013-09-10 12:13:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (47.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (61.8ms)
+Completed 200 OK in 1093ms (Views: 194.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:17 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:13:17 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:17 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:17 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:17 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:17 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:18 -0400
+
+
+Started POST "/users/sign_in" for 127.5.144.1 at 2013-09-10 12:13:52 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zp98hulDRoWDE+WurAbjLF97jNWyURceKJgHkpssyO4=", "user"=>{"email"=>"admin1@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'admin1@admin.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[35mSQL (131.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["last_sign_in_at", Mon, 09 Sep 2013 18:18:05 UTC +00:00], ["current_sign_in_at", Tue, 10 Sep 2013 16:13:52 UTC +00:00], ["last_sign_in_ip", "64.90.127.38"], ["current_sign_in_ip", "107.23.241.85"], ["sign_in_count", 3], ["updated_at", Tue, 10 Sep 2013 16:13:52 UTC +00:00]]
+  [1m[36m (30.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://project-livec9e50cd452f9.rhcloud.com/categories
+Completed 302 Found in 713ms (ActiveRecord: 162.5ms)
+
+
+Started GET "/categories" for 127.5.144.1 at 2013-09-10 12:13:52 -0400
+Processing by CategoriesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "transactions".id FROM "transactions" WHERE "transactions"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/index.html.erb within layouts/application (328.3ms)
+Completed 200 OK in 592ms (Views: 385.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:53 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:13:53 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:53 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:53 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:53 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:54 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:13:54 -0400
+
+
+Started GET "/categories" for 127.5.144.1 at 2013-09-10 12:18:27 -0400
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ?  [["user_id", 1]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/index.html.erb within layouts/application (111.5ms)
+Completed 200 OK in 207ms (Views: 145.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:27 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:27 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:18:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:27 -0400
+
+
+Started GET "/categories" for 127.5.144.1 at 2013-09-10 12:18:55 -0400
+Processing by CategoriesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mTransaction Load (0.7ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 53ms (Views: 46.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:55 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:18:55 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:56 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:18:56 -0400
+
+
+Started GET "/categories" for 127.5.144.1 at 2013-09-10 12:23:43 -0400
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ? AND "categories"."spree" = 'f'  [["user_id", 1]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/index.html.erb within layouts/application (343.3ms)
+Completed 200 OK in 894ms (Views: 387.9ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:23:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:23:46 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:23:46 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:23:46 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:23:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:23:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:23:46 -0400
+
+
+Started GET "/categories" for 127.5.144.1 at 2013-09-10 12:25:18 -0400
+Processing by CategoriesController#index as HTML
+  [1m[35mUser Load (18.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ? AND "categories"."spree" = 'f'[0m  [["user_id", 1]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?  [["category_id", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ? AND "categories"."spree" = 't'[0m  [["user_id", 1]]
+  Rendered categories/index.html.erb within layouts/application (99.1ms)
+Completed 200 OK in 510ms (Views: 401.6ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:25:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:25:19 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:25:19 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:25:19 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:25:19 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:25:19 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:25:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddMonthlyRemainingToCategory (20130910162704)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (11.5ms)[0m  [1mALTER TABLE "categories" ADD "monthly_remaining" decimal[0m
+  [1m[35mSQL (17.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130910162704"]]
+  [1m[36m (32.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/categories/1" for 127.5.144.1 at 2013-09-10 12:36:49 -0400
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ? AND "categories"."id" = ? LIMIT 1  [["user_id", 1], ["id", "1"]]
+  [1m[36mTransaction Load (2.3ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (138.9ms)
+Completed 200 OK in 1071ms (Views: 277.4ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/categories/1" for 127.5.144.1 at 2013-09-10 12:37:21 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ? AND "categories"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", "1"]]
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 96ms (Views: 84.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:37:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:21 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:21 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:21 -0400
+
+
+Started GET "/transactions/1" for 127.5.144.1 at 2013-09-10 12:37:22 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTransaction Load (0.4ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered transactions/show.html.erb within layouts/application (68.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 168ms (Views: 163.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/transactions" for 127.5.144.1 at 2013-09-10 12:37:35 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT "transactions".* FROM "transactions"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered transactions/index.html.erb within layouts/application (175.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 294ms (Views: 292.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:36 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:36 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:37:36 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:37:36 -0400
+
+
+Started GET "/transactions/new" for 127.5.144.1 at 2013-09-10 12:37:38 -0400
+Processing by TransactionsController#new as HTML
+  Rendered transactions/_form.html.erb (80.2ms)
+  Rendered transactions/new.html.erb within layouts/application (89.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 122ms (Views: 120.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/transactions/new" for 127.5.144.1 at 2013-09-10 12:39:55 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered transactions/_form.html.erb (23.0ms)
+  Rendered transactions/new.html.erb within layouts/application (26.2ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (undefined method `name' for #<Category:0x007f7620018040>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :category %><br>
+    20:     <% categories_array = current_user.categories.map { |category| [category.name, category.id] } %>
+    21:     <%= options_for_select(categories_array) %>
+    22:   </div>
+    23:   <div class="field">
+  app/views/transactions/_form.html.erb:20:in `block (2 levels) in _app_views_transactions__form_html_erb__1174096877316858621_70072763581580'
+  app/views/transactions/_form.html.erb:20:in `block in _app_views_transactions__form_html_erb__1174096877316858621_70072763581580'
+  app/views/transactions/_form.html.erb:1:in `_app_views_transactions__form_html_erb__1174096877316858621_70072763581580'
+  app/views/transactions/new.html.erb:3:in `_app_views_transactions_new_html_erb__3517726989879450692_70072763555520'
+
+
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (87.0ms)
+
+
+Started GET "/transactions/new" for 127.5.144.1 at 2013-09-10 12:40:02 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (87.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered transactions/_form.html.erb (697.3ms)
+  Rendered transactions/new.html.erb within layouts/application (853.9ms)
+Completed 200 OK in 1353ms (Views: 1260.2ms | ActiveRecord: 87.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:40:04 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:04 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:05 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:05 -0400
+
+
+Started GET "/transactions/new" for 127.5.144.1 at 2013-09-10 12:40:38 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered transactions/_form.html.erb (245.1ms)
+  Rendered transactions/new.html.erb within layouts/application (247.7ms)
+Completed 500 Internal Server Error in 255ms
+
+ActionView::Template::Error (undefined local variable or method `categories_array' for #<#<Class:0x007f76087d9440>:0x007f761830d438>):
+    18:   <div class="field">
+    19:     <%= f.label :category %><br>
+    20:     <%= f.select :category_id, current_user.categories.map { |category| [category.title, category.id] } %>
+    21:     <%= options_for_select(categories_array) %>
+    22:   </div>
+    23:   <div class="field">
+    24:     <%= f.label :date %><br>
+  app/views/transactions/_form.html.erb:21:in `block in _app_views_transactions__form_html_erb__1174096877316858621_70072594374820'
+  app/views/transactions/_form.html.erb:1:in `_app_views_transactions__form_html_erb__1174096877316858621_70072594374820'
+  app/views/transactions/new.html.erb:3:in `_app_views_transactions_new_html_erb__3517726989879450692_70072763555520'
+
+
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (81.8ms)
+
+
+Started GET "/transactions/new" for 127.5.144.1 at 2013-09-10 12:40:44 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered transactions/_form.html.erb (16.8ms)
+  Rendered transactions/new.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 110ms (Views: 107.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:44 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:44 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:44 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:40:44 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:44 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:44 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:40:44 -0400
+
+
+Started POST "/transactions" for 127.5.144.1 at 2013-09-10 12:41:29 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wwgReh8Q0a/z7QTFJRJkhu4uYA581gHkvfwIi2Sgdak=", "transaction"=>{"title"=>"Food Lion", "category_id"=>"1", "date(1i)"=>"2013", "date(2i)"=>"9", "date(3i)"=>"10", "amount"=>"67"}, "commit"=>"Create Transaction"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (7.8ms)[0m  [1mINSERT INTO "transactions" ("amount", "category_id", "created_at", "date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", #<BigDecimal:7f761422c158,'0.67E2',9(18)>], ["category_id", 1], ["created_at", Tue, 10 Sep 2013 16:41:30 UTC +00:00], ["date", Tue, 10 Sep 2013], ["title", "Food Lion"], ["updated_at", Tue, 10 Sep 2013 16:41:30 UTC +00:00]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 51ms
+
+NameError (undefined local variable or method `category' for #<Category:0x007f761424b8c8>):
+  app/models/category.rb:11:in `update_cash'
+  app/models/transaction.rb:8:in `update_category'
+  app/controllers/transactions_controller.rb:30:in `block in create'
+  app/controllers/transactions_controller.rb:29:in `create'
+
+
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (97.7ms)
+
+
+Started POST "/transactions" for 127.5.144.1 at 2013-09-10 12:41:52 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wwgReh8Q0a/z7QTFJRJkhu4uYA581gHkvfwIi2Sgdak=", "transaction"=>{"title"=>"Food Lion", "category_id"=>"1", "date(1i)"=>"2013", "date(2i)"=>"9", "date(3i)"=>"10", "amount"=>"67"}, "commit"=>"Create Transaction"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (8.1ms)[0m  [1mINSERT INTO "transactions" ("amount", "category_id", "created_at", "date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", #<BigDecimal:7f760874a560,'0.67E2',9(18)>], ["category_id", 1], ["created_at", Tue, 10 Sep 2013 16:41:52 UTC +00:00], ["date", Tue, 10 Sep 2013], ["title", "Food Lion"], ["updated_at", Tue, 10 Sep 2013 16:41:52 UTC +00:00]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 21ms
+
+NameError (undefined local variable or method `category' for #<Category:0x007f760876b8a0>):
+  app/models/category.rb:11:in `update_cash'
+  app/models/transaction.rb:8:in `update_category'
+  app/controllers/transactions_controller.rb:30:in `block in create'
+  app/controllers/transactions_controller.rb:29:in `create'
+
+
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /var/lib/stickshift/522dfc29e0b8cd843a000121/app-root/data/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (103.6ms)
+
+
+Started POST "/transactions" for 127.5.144.1 at 2013-09-10 12:42:14 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wwgReh8Q0a/z7QTFJRJkhu4uYA581gHkvfwIi2Sgdak=", "transaction"=>{"title"=>"Food Lion", "category_id"=>"1", "date(1i)"=>"2013", "date(2i)"=>"9", "date(3i)"=>"10", "amount"=>"67"}, "commit"=>"Create Transaction"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (16.9ms)[0m  [1mINSERT INTO "transactions" ("amount", "category_id", "created_at", "date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["amount", #<BigDecimal:7f76085ed0a0,'0.67E2',9(18)>], ["category_id", 1], ["created_at", Tue, 10 Sep 2013 16:42:15 UTC +00:00], ["date", Tue, 10 Sep 2013], ["title", "Food Lion"], ["updated_at", Tue, 10 Sep 2013 16:42:15 UTC +00:00]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35mSQL (4.2ms)[0m  UPDATE "categories" SET "monthly_remaining" = ?, "net_cash" = ?, "updated_at" = ? WHERE "categories"."id" = 1  [["monthly_remaining", #<BigDecimal:3ed1888,'0.323E3',9(27)>], ["net_cash", #<BigDecimal:3eda870,'-0.67E2',9(27)>], ["updated_at", Tue, 10 Sep 2013 16:42:15 UTC +00:00]]
+  [1m[36m (29.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://project-livec9e50cd452f9.rhcloud.com/transactions/2
+Completed 302 Found in 752ms (ActiveRecord: 68.9ms)
+
+
+Started GET "/transactions/2" for 127.5.144.1 at 2013-09-10 12:42:15 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTransaction Load (0.4ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered transactions/show.html.erb within layouts/application (10.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 334ms (Views: 329.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:16 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:16 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:42:16 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:16 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:16 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:16 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:16 -0400
+
+
+Started GET "/transactions/2" for 127.5.144.1 at 2013-09-10 12:42:45 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTransaction Load (0.3ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered transactions/show.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 81.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:46 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:42:46 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:46 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:42:46 -0400
+
+
+Started GET "/categories/1" for 127.5.144.1 at 2013-09-10 12:42:47 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ? AND "categories"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", "1"]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 79ms (Views: 71.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/1" for 127.5.144.1 at 2013-09-10 12:43:38 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ? AND "categories"."id" = ? LIMIT 1  [["user_id", 1], ["id", "1"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 255ms (Views: 250.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:43:39 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:43:39 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:43:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:43:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:43:39 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:43:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:43:39 -0400
+
+
+Started GET "/transactions/1" for 127.5.144.1 at 2013-09-10 12:44:22 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered transactions/show.html.erb within layouts/application (5.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 103ms (Views: 97.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/transactions/1/edit" for 127.5.144.1 at 2013-09-10 12:44:23 -0400
+Processing by TransactionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTransaction Load (0.8ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered transactions/_form.html.erb (14.9ms)
+  Rendered transactions/edit.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 109ms (Views: 103.2ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/transactions/1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+Processing by TransactionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wwgReh8Q0a/z7QTFJRJkhu4uYA581gHkvfwIi2Sgdak=", "transaction"=>{"title"=>"Harris Teeter", "category_id"=>"1", "date(1i)"=>"2013", "date(2i)"=>"9", "date(3i)"=>"9", "amount"=>"120"}, "commit"=>"Update Transaction", "id"=>"1"}
+  [1m[35mTransaction Load (0.4ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  UPDATE "transactions" SET "amount" = ?, "updated_at" = ? WHERE "transactions"."id" = 1  [["amount", #<BigDecimal:7f7614224db8,'0.12E3',9(18)>], ["updated_at", Tue, 10 Sep 2013 16:44:27 UTC +00:00]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?  [["category_id", 1]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "categories" SET "monthly_remaining" = ?, "net_cash" = ?, "updated_at" = ? WHERE "categories"."id" = 1[0m  [["monthly_remaining", #<BigDecimal:7f7614241328,'0.328E3',9(27)>], ["net_cash", #<BigDecimal:7f7614240f68,'-0.254E3',9(27)>], ["updated_at", Tue, 10 Sep 2013 16:44:27 UTC +00:00]]
+  [1m[35m (91.4ms)[0m  commit transaction
+Redirected to http://project-livec9e50cd452f9.rhcloud.com/transactions/1
+Completed 302 Found in 116ms (ActiveRecord: 96.0ms)
+
+
+Started GET "/transactions/1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered transactions/show.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 89ms (Views: 84.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+
+
+Started GET "/assets/transactions.js?body=1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+
+
+Started GET "/assets/categories.js?body=1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.5.144.1 at 2013-09-10 12:44:27 -0400
+
+
+Started GET "/categories/1" for 127.5.144.1 at 2013-09-10 12:44:29 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = ? AND "categories"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", "1"]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."category_id" = ?  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 63ms (Views: 56.1ms | ActiveRecord: 0.7ms)

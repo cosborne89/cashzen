@@ -16,8 +16,8 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.label :category %><br>
+    <%= f.select :category_id, current_user.categories.map { |category| [category.title, category.id] } %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
