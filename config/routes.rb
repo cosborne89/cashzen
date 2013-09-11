@@ -1,4 +1,6 @@
 Cashzen::Application.routes.draw do
+  resources :budgets
+
   resources :transactions
 
   resources :categories

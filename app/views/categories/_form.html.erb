@@ -28,16 +28,20 @@
     <%= f.number_field :reset_on %>
   </div>
   <div class="field">
-    <%= f.label :net_cash %><br>
-    <%= f.text_field :net_cash %>
+    <%= f.label :initial_cash %><br>
+    <%= f.text_field :initial_cash %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
   <div class="field">
     <%= f.label :spree %><br>
     <%= f.check_box :spree %>
+  </div>
+  <div class="field">
+    <%= f.label :date_if_spree %><br>
+    <%= f.date_select :date %>
   </div>
   <div class="actions">
     <%= f.submit %>

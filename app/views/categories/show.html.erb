@@ -11,16 +11,18 @@
 </p>
 
 <p>
-  <strong>Monthly Remaining:</strong>
-  <%= @category.monthly_remaining %>
+  <strong>Initial Cash:</strong>
+  <%= @category.initial_cash %>
 </p>
 
 <p>
   <strong>Transactions:</strong>
   <ul>
-    <% @category.transactions.each do |transaction| %>
+  <% @category.budgets.each do |budget| %>
+    <% budget.transactions.each do |transaction| %>
       <li><%= link_to transaction.title, transaction%> - <%= transaction.amount %></li>
     <% end %>  
+  <% end %>
   </ul>
 </p>
 

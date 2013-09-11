@@ -5,7 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Monthly Budget</th>
-      <th>Budget Remaining</th>
+      <th>Initial Cash</th>
       <th>Reset on</th>
       <th>Net cash</th>
     </tr>
@@ -16,38 +16,13 @@
       <tr>
         <td><%= link_to category.title, category %></td>
         <td><%= category.monthly_spend %></td>
-        <td><%= category.monthly_remaining %></td>
+        <td><%= category.initial_cash %></td>
         <td><%= category.reset_on %></td>
         <td><%= category.net_cash %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
-<br />
-<h1>Listing Sprees</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Monthly Budget</th>
-      <th>Budget Remaining</th>
-      <th>Reset on</th>
-      <th>Net cash</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @sprees.each do |category| %>
-      <tr>
-        <td><%= link_to category.title, category %></td>
-        <td><%= category.monthly_spend %></td>
-        <td><%= category.monthly_spend - category.transactions.to_a.sum(&:amount)+category.net_cash %></td>
-        <td><%= category.reset_on %></td>
-        <td><%= category.net_cash %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 

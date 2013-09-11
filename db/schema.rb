@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130910162704) do
+ActiveRecord::Schema.define(version: 20130911163529) do
+
+  create_table "budgets", force: true do |t|
+    t.string   "title"
+    t.decimal  "remaining"
+    t.integer  "month"
+    t.integer  "year"
+    t.text     "transaction_ids"
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.decimal  "initial"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -23,7 +36,9 @@ ActiveRecord::Schema.define(version: 20130910162704) do
     t.boolean  "spree"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "monthly_remaining"
+    t.decimal  "initial_cash"
+    t.date     "date"
+    t.text     "budget_ids"
   end
 
   create_table "transactions", force: true do |t|
@@ -34,6 +49,7 @@ ActiveRecord::Schema.define(version: 20130910162704) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.text     "budget_id"
   end
 
   create_table "users", force: true do |t|

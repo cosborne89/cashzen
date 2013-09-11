@@ -3,3 +3,6 @@
 {"ts":1378831201031,"patch":[[{"diffs":[[0,"ory."],[-1,"nam"],[1,"titl"],[0,"e, c"]],"start1":592,"start2":592,"length1":11,"length2":12}]],"length":926,"saved":false}
 {"ts":1378831236736,"patch":[[{"diffs":[[0,"  <%"],[-1," categories_array ="],[1,"= f.select :category_id,"],[0," cur"]],"start1":521,"start2":521,"length1":27,"length2":32}]],"length":931,"saved":false}
 {"ts":1378831243577,"patch":[[{"diffs":[[0," %>\n"],[-1,"    <%= options_for_select(categories_array) %>\n"],[0,"  </"]],"start1":622,"start2":622,"length1":56,"length2":8}]],"length":883,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1378920959122,"patch":[[{"diffs":[[0,"unt %>\n  </div>\n"],[1,"  <%= f.hidden_field :user_id, :value => current_user.id\n"],[0,"  <div class=\"ac"]],"start1":804,"start2":804,"length1":32,"length2":89}]],"length":940,"saved":false}
+{"ts":1378920960585,"patch":[[{"diffs":[[0,"_user.id"],[1," %>"],[0,"\n  <div "]],"start1":868,"start2":868,"length1":16,"length2":19}]],"length":943,"saved":false}
+{"ts":1378921132288,"patch":[[{"diffs":[[0,"id, "],[-1,":"],[0,"value"],[-1," =>"],[1,":"],[0," cur"]],"start1":847,"start2":847,"length1":17,"length2":14}]],"length":940,"saved":false}

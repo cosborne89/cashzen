@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  remaining: 9.99
+  date: 2013-09-11
+
+two:
+  title: MyString
+  remaining: 9.99
+  date: 2013-09-11
