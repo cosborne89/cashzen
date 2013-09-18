@@ -5,6 +5,8 @@ class BudgetsController < ApplicationController
   # GET /budgets.json
   def index
     @budgets = Budget.all
+    @years = @budgets.map(&:year).uniq
+    @months = @budgets.map(&:month).uniq
   end
 
   # GET /budgets/1

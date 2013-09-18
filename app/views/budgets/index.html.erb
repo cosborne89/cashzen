@@ -1,30 +1,25 @@
 <h1>Listing budgets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Remaining</th>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @budgets.each do |budget| %>
-      <tr>
-        <td><%= budget.title %></td>
-        <td><%= budget.remaining %></td>
-        <td><%= budget.date %></td>
-        <td><%= link_to 'Show', budget %></td>
-        <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
-        <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @years.each do |year|%>
+<%= year %>
+    <% @months.sort.each do |month| %>
+    <h2><%= Date::MONTHNAMES[month]%></h2>
+        <% @month_budgets = @budgets.where(year: year, month: month) %>
+        <table class="border-table">
+        <tbody>
+        <% @month_budgets.each do |budget|%>          
+          <tr>
+            <td><%= link_to budget.title, budget %></td>
+            <td><%= budget.remaining %></td>
+            <td><%= budget.month %></td>
+            <td><%= budget.year %></td>
+            <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
+            <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+      </tbody>
+      </table>
     <% end %>
-  </tbody>
-</table>
+<% end %>
 
 <br>
 

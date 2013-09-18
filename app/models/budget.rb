@@ -1,6 +1,7 @@
 class Budget < ActiveRecord::Base
     has_many :transactions
     belongs_to :category
+    belongs_to :user
     
     before_save :update_remaining
     after_save :update_category

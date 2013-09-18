@@ -28,3 +28,14 @@ div.container {
 .blue_button {
     @include button(simple, #0B7ABF);
 }
+
+
+.border-table {
+    border-collapse:collapse;
+    width: 100%;
+}
+
+.border-table th, .border-table td {
+    border: 1px solid grey;
+    padding: 1em;
+}
