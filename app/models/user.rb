@@ -27,5 +27,6 @@ class User < ActiveRecord::Base
   
   
    has_many :categories
+   has_many :budgets, :through => :categories
    has_many :transactions, :through => :categories
 end

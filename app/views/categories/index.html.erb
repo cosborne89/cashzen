@@ -1,27 +1,24 @@
 <h1>Listing categories</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Monthly Budget</th>
-      <th>Initial Cash</th>
-      <th>Reset on</th>
-      <th>Net cash</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= link_to category.title, category %></td>
-        <td><%= category.monthly_spend %></td>
-        <td><%= category.initial_cash %></td>
-        <td><%= category.reset_on %></td>
-        <td><%= category.net_cash %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
+<% @years.each do |year| %>
+    <h2><%= year %></h2>
+    <table class="border-table">
+        <tr>
+            <td>Category</td>
+            <% @categories.each do |category| %>
+            <td><%= category.title %></td>
+            <% end %>
+        </tr>
+        <% @months.each do |month| %>
+            <tr>
+                <td><%= Date::MONTHNAMES[month] %></td>
+                <% @categories.each do |category| %>
+                    <td><%= category.budgets.where(year: year, month: month).first.remaining if category.budgets.where(year: year, month: month).first %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
 
 <br>
 

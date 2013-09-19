@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
+<h1><%= @category.title %></h1>
+
 
 <p>
   <strong>Monthly spend:</strong>
@@ -15,16 +13,44 @@
   <%= @category.initial_cash %>
 </p>
 
-<p>
-  <strong>Transactions:</strong>
-  <ul>
-  <% @category.budgets.each do |budget| %>
-    <% budget.transactions.each do |transaction| %>
-      <li><%= link_to transaction.title, transaction%> - <%= transaction.amount %></li>
-    <% end %>  
-  <% end %>
-  </ul>
-</p>
+<% @years.each do |year|%>
+<%= year %>
+    <% @months.sort.each do |month| %>
+    <h2><%= Date::MONTHNAMES[month]%></h2>
+        <% @budget = @budgets.where(year: year, month: month).first %>
+        <table class="border-table">
+        <tbody>
+        <% @budget.transactions.each do |transaction|%>          
+          <tr>
+            <td><%= link_to transaction.title, transaction %></td>
+            <td><%= transaction.date %></td>
+            <td><%= transaction.amount %></td>
+            <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+            <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        <tr>
+            <td colspan="2">Budgeted for <%= Date::MONTHNAMES[month]%></td>
+            <td><%= @budget.initial %></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">Spent for <%= Date::MONTHNAMES[month]%></td>
+            <td><%= @budget.transactions.to_a.sum(&:amount)%></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">Remaining for <%= Date::MONTHNAMES[month]%></td>
+            <td><%= @budget.remaining%></td>
+            <td></td>
+            <td></td>
+        </tr>
+      </tbody>
+      </table>
+    <% end %>
+<% end %>
 
 <p>
   <strong>Reset on:</strong>

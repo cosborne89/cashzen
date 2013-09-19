@@ -6,7 +6,7 @@ class Category < ActiveRecord::Base
     scope :is_spree, -> { where(spree: true) }
     scope :basic, -> { where(spree: false) }
     
-   # before_save :update_cash
+    before_save :update_cash
     
     def update_cash
         self.net_cash = self.initial_cash + self.budgets.to_a.sum(&:remaining) if self.budgets

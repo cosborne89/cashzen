@@ -2,4 +2,4 @@
 
 _ budgets#index should show all budgets current month and scroll through (month view).
 _ category#show should show all categories and how much you've saved (saved view) and will drill down to category.budgets.each.remaining to show where you contributed the most.
-_ assocations are not created anywhere. need to be able to do current_user.budgets, etc
+X assocations are not created anywhere. need to be able to do current_user.budgets, etc

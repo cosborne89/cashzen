@@ -7,11 +7,25 @@ class CategoriesController < ApplicationController
   def index
     @categories = current_user.categories.basic
     @sprees = current_user.categories.is_spree
+    @years = []
+    @months = []
+    @categories.each do |category|
+      @budgets = category.budgets
+      @budgets.each do |budget|
+          @years << budget.year
+          @months << budget.month
+      end
+    end
+    @years = @years.uniq.map(&:to_i).sort
+    @months = @months.uniq.map(&:to_i).sort
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+      @budgets = @category.budgets
+      @years = @budgets.map(&:year).uniq
+      @months = @budgets.map(&:month).uniq
   end
 
   # GET /categories/new
