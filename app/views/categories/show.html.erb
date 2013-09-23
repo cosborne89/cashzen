@@ -53,24 +53,30 @@
 <% end %>
 
 <p>
-  <strong>Reset on:</strong>
-  <%= @category.reset_on %>
-</p>
-
-<p>
   <strong>Net cash:</strong>
   <%= @category.net_cash %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @category.user_id %>
+  <%= @category.user.email %>
 </p>
 
 <p>
-  <strong>Spree:</strong>
-  <%= @category.spree %>
+  <strong>Classification:</strong>
+  <%= @category.classification %>
 </p>
+
+<p>
+  <strong>Need/Save/Want:</strong>
+  <%= @category.need_type %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @category.frequency %>
+</p>
+
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

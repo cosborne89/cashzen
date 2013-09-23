@@ -20,10 +20,6 @@
     <%= f.text_field :monthly_spend %>
   </div>
   <div class="field">
-    <%= f.label :reset_on %><br>
-    <%= f.number_field :reset_on %>
-  </div>
-  <div class="field">
     <%= f.label :initial_cash %><br>
     <%= f.text_field :initial_cash %>
   </div>
@@ -31,14 +27,14 @@
     <%= f.label :user_id %><br>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="field">
-    <%= f.label :spree %><br>
-    <%= f.check_box :spree %>
-  </div>
-  <div class="field">
-    <%= f.label :date_if_spree %><br>
-    <%= f.date_select :date %>
-  </div>
+    <div class="field">
+      <%= f.label :classification %><br />
+      <%= f.select :classification, Category::Classification %>
+    </div>
+    <div class="field">
+      <%= f.label :need_type %><br />
+      <%= f.select :need_type, Category::NeedSaveWant %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

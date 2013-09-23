@@ -1,19 +1,18 @@
-<h1>Listing categories</h1>
-
+<h1></h1><h2>Variable Monthly Expenses</h2>
 <% @years.each do |year| %>
     <h2><%= year %></h2>
     <table class="border-table">
         <tr>
-            <td>Category</td>
-            <% @categories.each do |category| %>
-            <td><%= category.title %></td>
+            <th>Category</th>
+            <% @categories.variable.each do |category| %>
+            <th><%= link_to category.title, category %></th>
             <% end %>
         </tr>
         <% @months.each do |month| %>
             <tr>
-                <td><%= Date::MONTHNAMES[month] %></td>
-                <% @categories.each do |category| %>
-                    <td><%= category.budgets.where(year: year, month: month).first.remaining if category.budgets.where(year: year, month: month).first %></td>
+                <td><%= month_name(month) %></td>
+                <% @categories.variable.each do |category| %>
+                    <td><%= link_to category.budgets.where(year: year, month: month).first.remaining, category.budgets.where(year: year, month: month).first if category.budgets.where(year: year, month: month).first %></td>
                 <% end %>
             </tr>
         <% end %>
@@ -21,6 +20,100 @@
 <% end %>
 
 <br>
+
+<h2>Fixed Monthly Expenses</h2>
+<% @years.each do |year| %>
+    <h3><%= year %></h3>
+    <table class="border-table">
+        <tr>
+            <th>Category</th>
+            <% @categories.fixed.each do |category| %>
+            <th><%= link_to category.title, category %></th>
+            <% end %>
+        </tr>
+        <% @months.each do |month| %>
+            <tr>
+                <td><%= month_name(month) %></td>
+                <% @categories.fixed.each do |category| %>
+                    <td><%= link_to category.budgets.where(year: year, month: month).first.remaining, category.budgets.where(year: year, month: month).first if category.budgets.where(year: year, month: month).first %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+
+<br>
+
+<h2>Occasional Expenses</h2>
+<% @years.each do |year| %>
+    <h3><%= year %></h3>
+    <table class="border-table">
+        <tr>
+            <th>Category</th>
+            <% @categories.occasional.each do |category| %>
+            <th><%= link_to category.title, category %></th>
+            <% end %>
+        </tr>
+        <% @months.each do |month| %>
+            <tr>
+                <td><%= month_name(month) %></td>
+                <% @categories.occasional.each do |category| %>
+                    <td><%= link_to category.budgets.where(year: year, month: month).first.remaining, category.budgets.where(year: year, month: month).first if category.budgets.where(year: year, month: month).first %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+
+<br>
+
+<h2>Monthly Debt Payments</h2>
+<% @years.each do |year| %>
+    <h3><%= year %></h3>
+    <table class="border-table">
+        <tr>
+            <th>Category</th>
+            <% @categories.debt.each do |category| %>
+            <th><%= link_to category.title, category %></th>
+            <% end %>
+        </tr>
+        <% @months.each do |month| %>
+            <tr>
+                <td><%= month_name(month) %></td>
+                <% @categories.debt.each do |category| %>
+                    <td><%= link_to category.budgets.where(year: year, month: month).first.remaining, category.budgets.where(year: year, month: month).first if category.budgets.where(year: year, month: month).first %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+
+<br>
+
+<h2>Monthly Savings</h2>
+<% @years.each do |year| %>
+    <h3><%= year %></h3>
+    <table class="border-table">
+        <tr>
+            <th>Category</th>
+            <% @categories.savings.each do |category| %>
+            <th><%= link_to category.title, category %></th>
+            <% end %>
+        </tr>
+        <% @months.each do |month| %>
+            <tr>
+                <td><%= month_name(month) %></td>
+                <% @categories.savings.each do |category| %>
+                    <td><%= link_to category.budgets.where(year: year, month: month).first.remaining, category.budgets.where(year: year, month: month).first if category.budgets.where(year: year, month: month).first %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+
+<br>
+
+
 
 <%= link_to 'New Category', new_category_path %>
 

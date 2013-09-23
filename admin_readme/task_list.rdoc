@@ -3,3 +3,11 @@
 _ budgets#index should show all budgets current month and scroll through (month view).
 _ category#show should show all categories and how much you've saved (saved view) and will drill down to category.budgets.each.remaining to show where you contributed the most.
 X assocations are not created anywhere. need to be able to do current_user.budgets, etc
+_ how to handle income and making sure your budget is balanced?
+_ put categories#index into a custom #saved view. make categories#index the summary page (analytics + budget balance + categories by classification, frequency and need_type)
+
+now have:
+    :frequency, :string - monthly (variable + fixed + income) or deferred (occasional, debt, savings) or single (spree)
+    :classification, :string - fixed, variable, occasional, debt, savings, income, spree
+    :need_type, :string - need, save or want
+    NO spres

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911163529) do
+ActiveRecord::Schema.define(version: 20130923165523) do
 
   create_table "budgets", force: true do |t|
     t.string   "title"
@@ -30,15 +30,15 @@ ActiveRecord::Schema.define(version: 20130911163529) do
     t.string   "title"
     t.decimal  "monthly_spend"
     t.text     "transaction_ids"
-    t.integer  "reset_on"
     t.decimal  "net_cash"
     t.integer  "user_id"
-    t.boolean  "spree"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "initial_cash"
-    t.date     "date"
+    t.decimal  "initial_cash",    default: 0.0
     t.text     "budget_ids"
+    t.string   "frequency"
+    t.string   "classification"
+    t.string   "need_type"
   end
 
   create_table "transactions", force: true do |t|

@@ -5,8 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = current_user.categories.basic
-    @sprees = current_user.categories.is_spree
+    @categories = current_user.categories
     @years = []
     @months = []
     @categories.each do |category|
