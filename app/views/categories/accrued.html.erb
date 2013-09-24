@@ -1,0 +1,24 @@
+<h1></h1><h2>Variable Monthly Expenses</h2>
+<%= render 'table_section', :local_categories => @categories.variable %>
+
+<br>
+
+<h2>Fixed Monthly Expenses</h2>
+<%= render 'table_section', :local_categories => @categories.fixed %>
+
+<br>
+
+<h2>Occasional Expenses</h2>
+<%= render 'table_section', :local_categories => @categories.occasional %>
+
+<br>
+
+<h2>Monthly Debt Payments</h2>
+<%= render 'table_section', :local_categories => @categories.debt %>
+
+<br>
+
+<h2>Monthly Savings</h2>
+<%= render 'table_section', :local_categories => @categories.savings %>
+
+<br>

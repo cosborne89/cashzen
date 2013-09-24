@@ -1,0 +1,19 @@
+<% @years.each do |year| %>
+    <h3><%= year %></h3>
+    <table class="border-table">
+        <tr>
+            <th>Category</th>
+            <% local_categories.each do |category| %>
+            <th><%= link_to category.title, category %></th>
+            <% end %>
+        </tr>
+        <% @months.each do |month| %>
+            <tr>
+                <td><%= month_name(month) %></td>
+                <% local_categories.each do |category| %>
+                    <td><%= link_to category.budgets.where(year: year, month: month).first.remaining, category.budgets.where(year: year, month: month).first if category.budgets.where(year: year, month: month).first %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+<% end %>

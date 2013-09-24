@@ -18,6 +18,21 @@ class CategoriesController < ApplicationController
     @years = @years.uniq.map(&:to_i).sort
     @months = @months.uniq.map(&:to_i).sort
   end
+  
+  def accrued
+    @categories = current_user.categories
+    @years = []
+    @months = []
+    @categories.each do |category|
+      @budgets = category.budgets
+      @budgets.each do |budget|
+          @years << budget.year
+          @months << budget.month
+      end
+    end
+    @years = @years.uniq.map(&:to_i).sort
+    @months = @months.uniq.map(&:to_i).sort
+  end
 
   # GET /categories/1
   # GET /categories/1.json

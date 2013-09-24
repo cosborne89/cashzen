@@ -3,7 +3,11 @@ Cashzen::Application.routes.draw do
 
   resources :transactions
 
-  resources :categories
+  resources :categories do
+    collection do
+      get 'accrued'
+    end
+  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   

@@ -10,4 +10,4 @@ now have:
     :frequency, :string - monthly (variable + fixed + income) or deferred (occasional, debt, savings) or single (spree)
     :classification, :string - fixed, variable, occasional, debt, savings, income, spree
     :need_type, :string - need, save or want
-    NO spres
+    NO sprees
