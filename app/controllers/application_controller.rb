@@ -9,6 +9,7 @@ before_filter :configure_permitted_parameters, if: :devise_controller?
   def month_name(month)
       Date::MONTHNAMES[month]
   end
+  
 
   protected
 

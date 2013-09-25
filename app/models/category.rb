@@ -10,11 +10,14 @@ class Category < ActiveRecord::Base
     scope :debt, -> { where(classification: "Debt Payment") }
     scope :savings, -> { where(classification: "Transfer to Savings") }
     scope :income, -> { where(classification: "Income") }
+    scope :not_income, -> { where.not(classification: "Income") }
     scope :spree, -> { where(classification: "Spree") }
     scope :monthly, -> { where(frequency: "Monthly") }
     scope :occasional, -> { where(frequency: "Occasional") }
     scope :single, -> { where(frequency: "Single") }
-    
+    scope :needs, -> { where(need_type: "Need") }
+    scope :wants, -> { where(need_type: "Want") }
+    scope :saves, -> { where(need_type: "Save") }
     
     Classification = ["Fixed Expense", "Variable Expense", "Occasional Expense", "Debt Payment", "Transfer to Savings", "Income", "Spree"]
     NeedSaveWant = ["Need","Want","Save"]
@@ -23,6 +26,8 @@ class Category < ActiveRecord::Base
     
     before_save :update_cash
     before_save :set_frequency
+    
+
     
     def update_cash
         if self.net_cash.blank?

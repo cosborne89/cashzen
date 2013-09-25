@@ -17,6 +17,12 @@ class CategoriesController < ApplicationController
     end
     @years = @years.uniq.map(&:to_i).sort
     @months = @months.uniq.map(&:to_i).sort
+    @balance =  @categories.income.to_a.sum(&:monthly_spend) - @categories.not_income.to_a.sum(&:monthly_spend)
+    @debt_to_income = @categories.debt.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend)
+    @savings_to_income = @categories.savings.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend)
+    @needs = (@categories.not_income.needs.to_a.sum(&:monthly_spend))/@categories.not_income.to_a.sum(&:monthly_spend)
+    @wants = @categories.wants.to_a.sum(&:monthly_spend)/@categories.not_income.to_a.sum(&:monthly_spend)
+    @saves = @categories.saves.to_a.sum(&:monthly_spend)/@categories.not_income.to_a.sum(&:monthly_spend)
   end
   
   def accrued
@@ -101,4 +107,6 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit!
     end
+
+        
 end
