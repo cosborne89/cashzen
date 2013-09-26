@@ -1,10 +1,16 @@
 #task list
 
-_ budgets#index should show all budgets current month and scroll through (month view).
-_ category#show should show all categories and how much you've saved (saved view) and will drill down to category.budgets.each.remaining to show where you contributed the most.
+X budgets#index should show all budgets current month and scroll through (month view).
+X category#show should show all categories and how much you've saved (saved view) and will drill down to category.budgets.each.remaining to show where you contributed the most.
 X assocations are not created anywhere. need to be able to do current_user.budgets, etc
-_ how to handle income and making sure your budget is balanced?
-_ put categories#index into a custom #saved view. make categories#index the summary page (analytics + budget balance + categories by classification, frequency and need_type)
+X how to handle income and making sure your budget is balanced?
+X put categories#index into a custom #saved view. make categories#index the summary page (analytics + budget balance + categories by classification, frequency and need_type)
+_ Test nil cases (e.g. @categories.income if there is no income?) to not fail. Used during initial setup.
+_ Nested transaction partial with AJAX.
+_ Pull tables into partials to be refreshed on AJAX.
+_ Consolidate table for category#view to be like budgets#index
+_ Add sum per category into categories#accrued and consolidate table
+_ Brainstorm on a calendar view for transactions.
 
 now have:
     :frequency, :string - monthly (variable + fixed + income) or deferred (occasional, debt, savings) or single (spree)
