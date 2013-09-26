@@ -1,0 +1,68 @@
+<table class="border-table">
+    <tr>
+        <td>Budget Balance</td>
+        <td>
+            <% if @balance < 0 %>
+                &#x2717
+            <% else %>
+                &#x2713
+            <% end %>
+        </td>
+        <td><%= number_to_currency(@balance) %></td>
+    </tr>
+    <tr>
+        <td>Debt-to-Income Ratio (<36%)</td>
+        <td>
+            <% if @debt_to_income > 0.36 %>
+                &#x2717
+            <% else %>
+                &#x2713
+            <% end %>
+        </td>
+        <td><%= number_to_percentage(@debt_to_income*100) %></td>
+    </tr>
+    <tr>
+        <td>Savings-to-Income Ratio (>15%)</td>
+        <td>
+            <% if @savings_to_income < 0.15 %>
+                &#x2717
+            <% else %>
+                &#x2713
+            <% end %>
+        </td>
+        <td><%= number_to_percentage(@savings_to_income*100) %></td>
+    </tr>
+    <tr>
+        <td>Needs (<50%)</td>
+        <td>
+            <% if @needs > 0.50 %>
+                &#x2717
+            <% else %>
+                &#x2713
+            <% end %>
+        </td>
+        <td><%= number_to_percentage(@needs*100) %></td>
+    </tr>
+    <tr>
+        <td>Wants (<30%)</td>
+        <td>
+            <% if @wants > 0.30 %>
+                &#x2717
+            <% else %>
+                &#x2713
+            <% end %>
+        </td>
+        <td><%= number_to_percentage(@wants*100) %></td>
+    </tr>
+    <tr>
+        <td>Save (>20%)</td>
+        <td>
+            <% if @saves < 0.20 %>
+                &#x2717
+            <% else %>
+                &#x2713
+            <% end %>
+        </td>
+        <td><%= number_to_percentage(@saves*100) %></td>
+    </tr>
+</table>

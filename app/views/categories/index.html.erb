@@ -1,50 +1,30 @@
 <h1>Budget Analytics</h1>
-
+<%= render 'budget_analysis' %>
 <h1>Spending Summary</h1>
-<ul>
-    <li>Your budget is <%="not " if @balance < 0 %>balanced!</li>
-    <li>You have a <%= @balance < 0 ? "deficit" : "surplus" %> of <%= @balance < 0 ? @balance*(-1) : @balance %>.</li>
-    <li>Your debt-to-income ratio is <%= number_to_percentage(@debt_to_income*100) %></li>
-    <li>Your debt-to-income ratio is <%= number_to_percentage(@savings_to_income*100) %></li>
-    <li>50/30/20 Rule:</li>
-    <ul>
-        <li>Needs (Goal < 50%): <%= number_to_percentage(@needs*100) %></li>
-        <li>Wants (Goal < 30%): <%= number_to_percentage(@wants*100) %></li>
-        <li>Save (Goal > 20%): <%= number_to_percentage(@saves*100) %></li>
-    </ul>
-</ul>
 
-<h2>Monthly Income</h2>
+<table class="border-table">
+<tr><td><h2>Monthly Income</h2></td><td>Budget</td><td>Remaining this month</td></tr>
 <%= render 'summary_by_classification', :local_categories => @categories.income %>
 
-<br>
-
-<div class="half">
-    <h2>Variable Monthly Expenses</h2>
+<tr><td><h2>Variable Monthly Expenses</h2></td><td>Budget</td><td>Remaining this month</td></tr>
     <%= render 'summary_by_classification', :local_categories => @categories.variable %>
-</div>
 
-<br>
 <div class="half">
-    <h2>Fixed Monthly Expenses</h2>
+<tr><td><h2>Fixed Monthly Expenses</h2></td><td>Budget</td><td>Remaining this month</td></tr>
     <%= render 'summary_by_classification', :local_categories => @categories.fixed %>
-</div>
 
-
-<div class="half">
-<h2>Occasional Expenses</h2>
+<tr><td><h2>Occasional Expenses</h2></td><td>Budget</td><td>Remaining this month</td></tr>
 <%= render 'summary_by_classification', :local_categories => @categories.occasional %>
-</div>
 
-<div class="half">
-<h2>Monthly Debt Payments</h2>
+
+<tr><td><h2>Monthly Debt Payments</h2></td><td>Budget</td><td>Remaining this month</td></tr>
 <%= render 'summary_by_classification', :local_categories => @categories.debt %>
 
-<br>
 
-<h2>Monthly Savings</h2>
+
+<tr><td><h2> Monthly Savings</h2></td><td>Budget</td><td>Remaining this month</td></tr>
 <%= render 'summary_by_classification', :local_categories => @categories.savings %>
-</div>
+</table>
 
 
 

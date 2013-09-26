@@ -4,20 +4,20 @@ class Category < ActiveRecord::Base
     has_many :transactions, :through => :budgets
     
 
-    scope :fixed, -> { where(classification: "Fixed Expense") }
-    scope :variable, -> { where(classification: "Variable Expense") }
-    scope :occasional, -> { where(classification: "Occasional Expense") }
-    scope :debt, -> { where(classification: "Debt Payment") }
-    scope :savings, -> { where(classification: "Transfer to Savings") }
-    scope :income, -> { where(classification: "Income") }
-    scope :not_income, -> { where.not(classification: "Income") }
-    scope :spree, -> { where(classification: "Spree") }
-    scope :monthly, -> { where(frequency: "Monthly") }
-    scope :occasional, -> { where(frequency: "Occasional") }
-    scope :single, -> { where(frequency: "Single") }
-    scope :needs, -> { where(need_type: "Need") }
-    scope :wants, -> { where(need_type: "Want") }
-    scope :saves, -> { where(need_type: "Save") }
+    scope :fixed, -> { where(classification: "Fixed Expense").order(monthly_spend: :desc) }
+    scope :variable, -> { where(classification: "Variable Expense").order(monthly_spend: :desc)  }
+    scope :occasional, -> { where(classification: "Occasional Expense").order(monthly_spend: :desc)  }
+    scope :debt, -> { where(classification: "Debt Payment").order(monthly_spend: :desc)  }
+    scope :savings, -> { where(classification: "Transfer to Savings").order(monthly_spend: :desc)  }
+    scope :income, -> { where(classification: "Income").order(monthly_spend: :desc)  }
+    scope :not_income, -> { where.not(classification: "Income").order(monthly_spend: :desc)  }
+    scope :spree, -> { where(classification: "Spree").order(monthly_spend: :desc)  }
+    scope :monthly, -> { where(frequency: "Monthly").order(monthly_spend: :desc)  }
+    scope :occasional, -> { where(frequency: "Occasional").order(monthly_spend: :desc)  }
+    scope :single, -> { where(frequency: "Single").order(monthly_spend: :desc)  }
+    scope :needs, -> { where(need_type: "Need").order(monthly_spend: :desc)  }
+    scope :wants, -> { where(need_type: "Want").order(monthly_spend: :desc)  }
+    scope :saves, -> { where(need_type: "Save").order(monthly_spend: :desc)  }
     
     Classification = ["Fixed Expense", "Variable Expense", "Occasional Expense", "Debt Payment", "Transfer to Savings", "Income", "Spree"]
     NeedSaveWant = ["Need","Want","Save"]

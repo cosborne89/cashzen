@@ -1,26 +1,22 @@
 <h1>Listing budgets</h1>
-<% @years.each do |year|%>
-<%= year %>
-    <% @months.sort.each do |month| %>
-    <h2><%= Date::MONTHNAMES[month]%></h2>
-        <% @month_budgets = @budgets.where(year: year, month: month) %>
         <table class="border-table">
         <tbody>
-        <% @month_budgets.each do |budget|%>          
+<% @years.each do |year|%>
+    <% @months.sort.each do |month| %>
+    <tr><td colspan="2"><h3><%= Date::MONTHNAMES[month]%>, <%= year %></h3></td></tr>
+
+        <% @month_budgets = @budgets.where(year: year, month: month) %>
+        <% @month_budgets.each do |budget|%> 
           <tr>
             <td><%= link_to budget.title, budget %></td>
-            <td><%= budget.remaining %></td>
-            <td><%= budget.month %></td>
-            <td><%= budget.year %></td>
-            <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
-            <td><%= link_to 'Destroy', budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= number_to_currency(budget.remaining) %></td>
           </tr>
           <% end %>
-      </tbody>
-      </table>
+
     <% end %>
 <% end %>
-
+</tbody>
+</table>
 <br>
 
 <%= link_to 'New Budget', new_budget_path %>

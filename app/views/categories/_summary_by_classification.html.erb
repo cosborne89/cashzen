@@ -1,9 +1,8 @@
-<table class="border-table">
+
     <% local_categories.each do |category| %>
         <tr>
             <td><%= link_to category.title, category %></td>
-            <td><%= category.monthly_spend %></td>
-            <td><%= category.budgets.where(month: Date.today.month, year: Date.today.year).first ? category.budgets.where(month: Date.today.month, year: Date.today.year).first.remaining : category.monthly_spend  %></td>
+            <td><%= number_to_currency(category.monthly_spend) %></td>
+            <td><%= category.budgets.where(month: Date.today.month, year: Date.today.year).first ? number_to_currency(category.budgets.where(month: Date.today.month, year: Date.today.year).first.remaining) : number_to_currency(category.monthly_spend)  %></td>
         </tr>
     <% end %>
-</table>
