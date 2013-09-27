@@ -17,12 +17,16 @@ class CategoriesController < ApplicationController
     end
     @years = @years.uniq.map(&:to_i).sort
     @months = @months.uniq.map(&:to_i).sort
-    @balance =  @categories.income.to_a.sum(&:monthly_spend) - @categories.not_income.to_a.sum(&:monthly_spend)
-    @debt_to_income = @categories.debt.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend)
-    @savings_to_income = @categories.savings.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend)
-    @needs = (@categories.not_income.needs.to_a.sum(&:monthly_spend))/@categories.not_income.to_a.sum(&:monthly_spend)
-    @wants = @categories.wants.to_a.sum(&:monthly_spend)/@categories.not_income.to_a.sum(&:monthly_spend)
-    @saves = @categories.saves.to_a.sum(&:monthly_spend)/@categories.not_income.to_a.sum(&:monthly_spend)
+    @balance =  @categories.income.to_a.sum(&:monthly_spend) - @categories.not_income.to_a.sum(&:monthly_spend) unless @categories.income.blank?
+    unless @categories.income.blank?
+      @debt_to_income = @categories.debt.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend) unless @categories.debt.blank?
+      @savings_to_income = @categories.savings.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend) unless @categories.savings.blank?
+    end
+    unless @categories.not_income.blank?
+        @needs = (@categories.not_income.needs.to_a.sum(&:monthly_spend))/@categories.not_income.to_a.sum(&:monthly_spend) unless @categories.needs.blank?
+        @wants = @categories.wants.to_a.sum(&:monthly_spend)/@categories.not_income.to_a.sum(&:monthly_spend) unless @categories.wants.blank?
+        @saves = @categories.saves.to_a.sum(&:monthly_spend)/@categories.not_income.to_a.sum(&:monthly_spend) unless @categories.saves.blank?
+    end
   end
   
   def accrued
@@ -50,7 +54,14 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
+      case params[:classification]
+      when "Income"
+        @category = Category.new(:classification => "Income")
+      when XX
+        XX
+      else 
+        @category = Category.new
+      end
   end
 
   # GET /categories/1/edit

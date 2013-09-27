@@ -1,10 +1,11 @@
 class TransactionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
 
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.all.order(date: :asc)
+    @transactions = current_user.transactions.all.order(date: :asc) unless current_user.transactions.all.blank?
   end
 
   # GET /transactions/1
@@ -14,7 +15,11 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
-    @transaction = Transaction.new
+      if params[:category_id]
+        @transaction = Transaction.new(:category_id => params[:category_id])
+      else
+        @transaction = Transaction.new  
+      end
   end
 
   # GET /transactions/1/edit
@@ -69,6 +74,6 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:title, :category_id, :date, :amount, :budget_id)
+      params.require(:transaction).permit(:title, :category_id, :date, :amount, :budget_id, :user_id)
     end
 end

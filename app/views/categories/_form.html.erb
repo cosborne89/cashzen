@@ -23,13 +23,16 @@
     <%= f.label :initial_cash %><br>
     <%= f.text_field :initial_cash %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-  </div>
-    <div class="field">
-      <%= f.label :classification %><br />
+ <div class="field">
+      <%= f.label :classification %><br>
+    <% if params[:classification] %>
+        <%= f.hidden_field :classification, value: params[:classification] %>
+        <%= params[:classification] %>
+    <% else %>
       <%= f.select :classification, Category::Classification %>
+    <% end %>  
+
     </div>
     <div class="field">
       <%= f.label :need_type %><br />

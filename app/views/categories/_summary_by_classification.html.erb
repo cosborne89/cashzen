@@ -1,7 +1,7 @@
 
     <% local_categories.each do |category| %>
         <tr>
-            <td><%= link_to category.title, category %></td>
+            <td><%= link_to category.title, category %> <%= link_to '&#8853;'.html_safe, new_transaction_path(:category_id => category.id) %></td>
             <td><%= number_to_currency(category.monthly_spend) %></td>
             <td><%= category.budgets.where(month: Date.today.month, year: Date.today.year).first ? number_to_currency(category.budgets.where(month: Date.today.month, year: Date.today.year).first.remaining) : number_to_currency(category.monthly_spend)  %></td>
         </tr>

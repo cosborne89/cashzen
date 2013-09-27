@@ -1,5 +1,8 @@
+<% unless @balance || @debt_to_income || @savings_to_income || @needs || @wants || @saves %>
+<h3>Budget Analytics will appear after you add categories. <%= link_to "Add a category now.", new_category_path %></h3>
+<% end %>
 <table class="border-table">
-    <tr>
+    <% if @balance %><tr>
         <td>Budget Balance</td>
         <td>
             <% if @balance < 0 %>
@@ -10,7 +13,8 @@
         </td>
         <td><%= number_to_currency(@balance) %></td>
     </tr>
-    <tr>
+    <% end %>
+    <% if @debt_to_income %><tr>
         <td>Debt-to-Income Ratio (<36%)</td>
         <td>
             <% if @debt_to_income > 0.36 %>
@@ -21,7 +25,8 @@
         </td>
         <td><%= number_to_percentage(@debt_to_income*100) %></td>
     </tr>
-    <tr>
+    <% end %>
+    <% if @savings_to_income %><tr>
         <td>Savings-to-Income Ratio (>15%)</td>
         <td>
             <% if @savings_to_income < 0.15 %>
@@ -32,7 +37,8 @@
         </td>
         <td><%= number_to_percentage(@savings_to_income*100) %></td>
     </tr>
-    <tr>
+    <% end %>
+    <% if @needs %><tr>
         <td>Needs (<50%)</td>
         <td>
             <% if @needs > 0.50 %>
@@ -43,7 +49,8 @@
         </td>
         <td><%= number_to_percentage(@needs*100) %></td>
     </tr>
-    <tr>
+    <% end %>
+   <% if @wants %><tr>
         <td>Wants (<30%)</td>
         <td>
             <% if @wants > 0.30 %>
@@ -54,7 +61,8 @@
         </td>
         <td><%= number_to_percentage(@wants*100) %></td>
     </tr>
-    <tr>
+    <% end %>
+    <% if @saves %><tr>
         <td>Save (>20%)</td>
         <td>
             <% if @saves < 0.20 %>
@@ -65,4 +73,5 @@
         </td>
         <td><%= number_to_percentage(@saves*100) %></td>
     </tr>
+    <% end %>
 </table>
