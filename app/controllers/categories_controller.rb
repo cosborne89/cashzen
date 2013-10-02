@@ -50,6 +50,20 @@ class CategoriesController < ApplicationController
       @budgets = @category.budgets
       @years = @budgets.map(&:year).uniq
       @months = @budgets.map(&:month).uniq
+      dates = []
+      remainings = []
+      accrued = []
+      cumulative = @category.initial_cash
+      @budgets.each do |budget|
+          dates << "#{budget.month}, #{budget.year}"
+          remainings << budget.remaining.to_f
+          cumulative = cumulative+budget.remaining
+          accrued << cumulative.to_f
+      end
+      gon.dates = dates
+      gon.number_dates = dates.count
+      gon.remainings = remainings
+      gon.accrued = accrued
   end
 
   # GET /categories/new

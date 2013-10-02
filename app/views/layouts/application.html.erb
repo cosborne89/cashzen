@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Cashzen</title>
+  <%= include_gon %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300" %>
@@ -11,7 +12,7 @@
 <div class="container">
     <div class="banner">
         <h1>Cashzen</h1>
-        <%= render 'shared/nav_actions' %>
+        <%= render 'shared/nav_actions' if user_signed_in? %>
         <p class="notice"><%= notice %></p>                                                                                                                                                                                                         
         <p class="alert"><%= alert %></p> 
     </div>
