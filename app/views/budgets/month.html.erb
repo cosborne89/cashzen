@@ -1,0 +1,24 @@
+<h1>Spending in <%= Date::MONTHNAMES[@month]%> <%= @year %></h1>
+<table class="border-table">
+<thead>
+    <td></td>
+    <% @categories.each do |category| %>
+        <td><%= category.title %></td>
+    <% end %>
+</thead>
+<tbody>
+<% @dates_in_month.each do |date| %>
+<% @transactions_on_date = @transactions.where(date: Date.new(@year, @month, date)) %>
+<tr>
+    <td><%= date %></td>
+    <% @categories.each do |category| %>
+        <td><%= @transactions_on_date.where(category_id: category.id).to_a.sum(&:amount) if @transactions_on_date.where(category_id: category.id) %></td>
+    <% end %>
+</tr>
+<% end %>
+</tbody>
+</table>
+<br>
+
+
+<%= link_to 'New Budget', new_budget_path %>

@@ -77,7 +77,7 @@
   <%= @category.frequency %>
 </p>
 
-<div id="placeholder" style="width: 600px; height: 300px; padding: 0px; position: relative;">
+<div id="accrued" style="width: 600px; height: 300px; padding: 0px; position: relative;">
 <canvas class="base" width="600" height="300"></canvas>
 <canvas class="overlay" width="600" height="300" style="position: absolute; left: 0px; top: 0px;"></canvas>
 <div class="tickLabels" style="font-size:smaller"><div class="xAxis x1Axis" style="color:#545454"><div class="tickLabel" style="position:absolute;text-align:center;left:-5px;top:284px;width:75px">0</div><div class="tickLabel" style="position:absolute;text-align:center;left:78px;top:284px;width:75px">2</div><div class="tickLabel" style="position:absolute;text-align:center;left:162px;top:284px;width:75px">4</div><div class="tickLabel" style="position:absolute;text-align:center;left:245px;top:284px;width:75px">6</div><div class="tickLabel" style="position:absolute;text-align:center;left:329px;top:284px;width:75px">8</div><div class="tickLabel" style="position:absolute;text-align:center;left:412px;top:284px;width:75px">10</div><div class="tickLabel" style="position:absolute;text-align:center;left:496px;top:284px;width:75px">12</div></div><div class="yAxis y1Axis" style="color:#545454"><div class="tickLabel" style="position:absolute;text-align:right;top:269px;right:575px;width:25px">-2.5</div><div class="tickLabel" style="position:absolute;text-align:right;top:230px;right:575px;width:25px">0.0</div><div class="tickLabel" style="position:absolute;text-align:right;top:191px;right:575px;width:25px">2.5</div><div class="tickLabel" style="position:absolute;text-align:right;top:152px;right:575px;width:25px">5.0</div><div class="tickLabel" style="position:absolute;text-align:right;top:113px;right:575px;width:25px">7.5</div><div class="tickLabel" style="position:absolute;text-align:right;top:74px;right:575px;width:25px">10.0</div><div class="tickLabel" style="position:absolute;text-align:right;top:35px;right:575px;width:25px">12.5</div><div class="tickLabel" style="position:absolute;text-align:right;top:-4px;right:575px;width:25px">15.0</div></div></div>
@@ -86,26 +86,21 @@
 
 $(function () {
     var d1 = [];
-    for (var i = 0; i <= gon.number_dates; i += 1)
+    for (var i = 0; i < gon.number_dates; i += 1)
         d1.push([i, gon.remainings[i]]);
     var d2 = [];
-    for (var i = 0; i <= gon.number_dates; i += 1)
-        d1.push([i, gon.accrued[i]]);
+    for (var i = 0; i < gon.number_dates; i += 1)
+        d2.push([i, gon.accrued[i]]);
+    var options = {
+        xaxis: {
+            ticks: [[0, "June"], [1, "July"], [2, "August"], [3, "September"], [4, "October"]] 
+        }
+    }
 
 
-    $.plot($("#placeholder"), [ d1 ]);
+    $.plot($("#accrued"), [ { label: "Remaining Per Month", data: d1, bars: { show: true, 'align': "center", 'barWidth':0.7} }, { label: "Saved Over Time", data: d2, lines: { show: true}, points: { show: true} } ], options );
 });
-$(function () {
-    var d1 = [];
-    for (var i = 0; i <= gon.number_dates; i += 1)
-        d1.push([i, gon.remainings[i]]);
-    var options = { yaxis: { min: 0, max: 100 }, xaxis: { min: 0, max: 3}  }
-
-    var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
-
-    //$.plot($("#placeholder"), [d1, d2], options);
-});
-
+[[0, "zero"], [1.2, "one mark"], [2.4, "two marks"]]
     
 </script>
 

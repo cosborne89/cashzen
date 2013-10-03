@@ -6,13 +6,17 @@
 </p>
 
 <p>
+  <strong>ID:</strong>
+  <%= @budget.id %>
+</p>
+<p>
   <strong>Remaining:</strong>
   <%= @budget.remaining %>
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @budget.month %>/<%=@budget.year%>
+  <strong>Month:</strong>
+  <%= @budget.date.strftime("%B %Y")%>
 </p>
 
 <table class="border-table">
@@ -31,4 +35,5 @@
 </table>
 
 <%= link_to 'Edit', edit_budget_path(@budget) %> |
+<%= link_to 'Destroy', @budget, :confirm => "Are you sure?", :method => :delete %>
 <%= link_to 'Back', budgets_path %>

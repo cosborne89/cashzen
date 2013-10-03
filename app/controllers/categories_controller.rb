@@ -47,7 +47,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-      @budgets = @category.budgets
+      @budgets = @category.budgets.order(date: :asc)
       @years = @budgets.map(&:year).uniq
       @months = @budgets.map(&:month).uniq
       dates = []
@@ -61,7 +61,7 @@ class CategoriesController < ApplicationController
           accrued << cumulative.to_f
       end
       gon.dates = dates
-      gon.number_dates = dates.count
+      gon.number_dates = @budgets.count
       gon.remainings = remainings
       gon.accrued = accrued
   end

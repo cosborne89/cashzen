@@ -1,5 +1,9 @@
 Cashzen::Application.routes.draw do
-  resources :budgets
+  resources :budgets do
+      collection do 
+          get 'month'
+      end
+  end
 
   resources :transactions
 

@@ -7,7 +7,7 @@ class Transaction < ActiveRecord::Base
     after_save :update_budget
     
     def find_or_create_budget
-        @budget = self.category.budgets.where(category_id: self.category_id, user_id: self.user_id, month: self.date.month, year: self.date.year, title: self.category.title).first
+        @budget = self.category.budgets.where(category_id: self.category_id, user_id: self.user_id, month: self.date.month, year: self.date.year).first
         unless @budget
             @budget = Budget.create(category_id: self.category_id, user_id: self.user_id, month: self.date.month, year: self.date.year, title: self.category.title, remaining: self.category.monthly_spend, initial: self.category.monthly_spend)
         end

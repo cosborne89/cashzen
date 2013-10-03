@@ -8,11 +8,11 @@ X put categories#index into a custom #saved view. make categories#index the summ
 X Test nil cases (e.g. @categories.income if there is no income?) to not fail. Used during initial setup.
 _ Nested transaction partial with AJAX.
 _ Pull tables into partials to be refreshed on AJAX.
-X Consolidate table for category#view to be like budgets#index
-_ Add sum per category into categories#accrued and consolidate table
-_ Brainstorm on a calendar view for transactions.
+X Consolidate table for category#view to be like budgets#inde
+X Add sum per category into categories#accrued and consolidate table [decided against]
+X Brainstorm on a calendar view for transactions.
 _ Finish passing locals into a path for new transactions under a category (in transactions controller) and new categories under a classificatoin (in categories controller)
-_ Make a budget.date category with  t = Date.new(budget.year, budget.month, 1). This should be on before_save for budgets.rb
+X Make a budget.date category with  t = Date.new(budget.year, budget.month, 1). This should be on before_save for budgets.rb
 
 now have:
     :frequency, :string - monthly (variable + fixed + income) or deferred (occasional, debt, savings) or single (spree)

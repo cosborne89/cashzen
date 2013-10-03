@@ -9,6 +9,14 @@ class BudgetsController < ApplicationController
     @months = @budgets.map(&:month).uniq
   end
 
+  def month
+      @categories = current_user.categories
+      @month = Date.today.month
+      @year = Date.today.year
+      @dates_in_month = 1..Time::days_in_month(@month)
+      @budgets = current_user.budgets.where(month: @month)
+      @transactions = current_user.transactions.where(date: Date.new(@year, @month, 1)..Date.new(@year,@month,31))
+  end
   # GET /budgets/1
   # GET /budgets/1.json
   def show
@@ -71,6 +79,6 @@ class BudgetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def budget_params
-      params.require(:budget).permit(:title, :remaining, :month, :year, :transaction_ids, :category_id, :user_id)
+      params.require(:budget).permit(:title, :remaining, :month, :year, :transaction_ids, :category_id, :user_id, :date)
     end
 end
