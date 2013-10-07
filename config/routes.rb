@@ -4,6 +4,7 @@ Cashzen::Application.routes.draw do
           get 'month'
       end
   end
+  get 'budgets/:year/:month', to: 'budgets#summary_by_month', as: :summary_by_month
 
   resources :transactions
 

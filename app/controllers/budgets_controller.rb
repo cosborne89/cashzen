@@ -4,9 +4,9 @@ class BudgetsController < ApplicationController
   # GET /budgets
   # GET /budgets.json
   def index
-    @budgets = current_user.budgets
-    @years = @budgets.map(&:year).uniq
-    @months = @budgets.map(&:month).uniq
+      @budgets = Budget.where(year: Date.today.year, month: Date.today.month)
+      @year = Date.today.year
+      @month = Date.today.month
   end
 
   def month
@@ -17,6 +17,13 @@ class BudgetsController < ApplicationController
       @budgets = current_user.budgets.where(month: @month)
       @transactions = current_user.transactions.where(date: Date.new(@year, @month, 1)..Date.new(@year,@month,31))
   end
+  
+  def summary_by_month
+      @budgets = Budget.where(year: params[:year], month: params[:month])
+      @year = params[:year]
+      @month = params[:month]
+  end
+  
   # GET /budgets/1
   # GET /budgets/1.json
   def show

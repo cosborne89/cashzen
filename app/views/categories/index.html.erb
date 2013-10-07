@@ -3,50 +3,50 @@
 <h1>Spending Summary</h1>
 
 <table class="border-table">
-<tr><td>Spending Category</td><td>Budgeted</td><td>Remaining This Month</td></tr>
-<tr><td colspan="3"><h2>Monthly Income</h2></td></tr>
+<tr><td>Spending Category</td><td>Budgeted</td></tr>
+<tr><td colspan="2"><h2>Monthly Income</h2></td></tr>
     <% unless @categories.income.blank? %>
         <%= render 'summary_by_classification', :local_categories => @categories.income %>
     <% else %>
-        <tr><td colspan="3">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Income") %></td></tr>
+        <tr><td colspan="2">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Income") %></td></tr>
     <% end %>
 
-<tr><td colspan="3"><h2>Variable Monthly Expenses</h2></td></tr>
+<tr><td colspan="2"><h2>Variable Monthly Expenses</h2></td></tr>
     <% unless @categories.variable.blank? %>
         <%= render 'summary_by_classification', :local_categories => @categories.variable %>
     <% else %>
-        <tr><td colspan="3">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path %></td></tr>
+        <tr><td colspan="2">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Variable Expense") %></td></tr>
     <% end %>
 
-<tr><td colspan="3"><h2>Fixed Monthly Expenses</h2></td></tr>
+<tr><td colspan="2"><h2>Fixed Monthly Expenses</h2></td></tr>
     <% unless @categories.fixed.blank? %>
         <%= render 'summary_by_classification', :local_categories => @categories.fixed %>
     <% else %>
-        <tr><td colspan="3">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path %></td></tr>
+        <tr><td colspan="2">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Fixed Expense") %></td></tr>
     <% end %>
 
-<tr><td colspan="3"><h2>Occasional Expenses</h2></td></tr>
+<tr><td colspan="2"><h2>Occasional Expenses</h2></td></tr>
     <% unless @categories.occasional.blank? %>
         <%= render 'summary_by_classification', :local_categories => @categories.occasional %>
     <% else %>
-        <tr><td colspan="3">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path %></td></tr>
+        <tr><td colspan="2">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Occasional Expense") %></td></tr>
     <% end %>
 
 
-<tr><td colspan="3"><h2>Monthly Debt Payments</h2></td></tr>
+<tr><td colspan="2"><h2>Monthly Debt Payments</h2></td></tr>
     <% unless @categories.debt.blank? %>
         <%= render 'summary_by_classification', :local_categories => @categories.debt %>
     <% else %>
-        <tr><td colspan="3">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path %></td></tr>
+        <tr><td colspan="2">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Debt Payment") %></td></tr>
     <% end %>
 
 
 
-<tr><td colspan="3"><h2> Monthly Savings</h2></td></tr>
+<tr><td colspan="2"><h2> Monthly Savings</h2></td></tr>
     <% unless @categories.savings.blank? %>
         <%= render 'summary_by_classification', :local_categories => @categories.savings %>
     <% else %>
-        <tr><td colspan="3">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path %></td></tr>
+        <tr><td colspan="2">You haven't added any categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Transfer to Savings") %></td></tr>
     <% end %>
 </table>
 

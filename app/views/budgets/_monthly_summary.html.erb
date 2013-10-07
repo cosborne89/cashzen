@@ -1,0 +1,16 @@
+<p><%= link_to "#{month_name(@month.to_i-1)}, #{@year}", summary_by_month_path(@year, @month.to_i-1) %> | <%= link_to "#{month_name(@month.to_i+1)}, #{@year}", summary_by_month_path(@year, @month.to_i+1) %></p>
+
+<h1>Spending Summary for <%= month_name(@month.to_i)%>, <%= @year %>.</h1>
+        <table class="border-table">
+        <tbody>
+        <% @budgets.each do |budget|%> 
+          <tr>
+            <td><%= link_to budget.title, budget %></td>
+            <td><%= number_to_currency(budget.remaining + budget.transactions.to_a.sum(&:amount)) %></td>
+            <td><%= number_to_currency(budget.remaining) %></td>
+          </tr>
+          <% end %>
+</tbody>
+</table>
+<br>
+

@@ -71,8 +71,18 @@ class CategoriesController < ApplicationController
       case params[:classification]
       when "Income"
         @category = Category.new(:classification => "Income")
-      when XX
-        XX
+      when "Fixed Expense"
+        @category = Category.new(:classification => "Fixed Expense")
+      when "Occasional Expense"
+        @category = Category.new(:classification => "Occasional Expense")
+      when "Variable Expense"
+        @category = Category.new(:classification => "Variable Expense")
+      when "Debt Payment"
+        @category = Category.new(:classification => "Debt Payment")
+      when "Transfer to Savings"
+        @category = Category.new(:classification => "Transfer to Savings")
+      when "Spree"
+        @category = Category.new(:classification => "Spree")
       else 
         @category = Category.new
       end

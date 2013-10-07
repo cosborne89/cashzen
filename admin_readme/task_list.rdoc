@@ -11,8 +11,14 @@ _ Pull tables into partials to be refreshed on AJAX.
 X Consolidate table for category#view to be like budgets#inde
 X Add sum per category into categories#accrued and consolidate table [decided against]
 X Brainstorm on a calendar view for transactions.
-_ Finish passing locals into a path for new transactions under a category (in transactions controller) and new categories under a classificatoin (in categories controller)
+X Finish passing locals into a path for new transactions under a category (in transactions controller) and new categories under a classificatoin (in categories controller)
 X Make a budget.date category with  t = Date.new(budget.year, budget.month, 1). This should be on before_save for budgets.rb
+_ If I edit a category, what happens to the budget of that month?
+X Create a Historical Monthly Summary (Summary view, but for month's past).
+_ Timeline concerns: Updating a category cannot effect past budgets, but should effect this month's budget.
+_ Route mask path "budgets" to "budget"
+_ Transactions per month view routing similar to budgets (/transactions is this months, with links to "archive" /:year/:month.
+_ Transactions view per category? What is the value there? What about per classification?
 
 now have:
     :frequency, :string - monthly (variable + fixed + income) or deferred (occasional, debt, savings) or single (spree)
