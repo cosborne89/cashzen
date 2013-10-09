@@ -6,11 +6,31 @@
         <% @budgets.each do |budget|%> 
           <tr>
             <td><%= link_to budget.title, budget %></td>
-            <td><%= number_to_currency(budget.remaining + budget.transactions.to_a.sum(&:amount)) %></td>
+            <td><%= number_to_currency(budget.initial) %></td>
             <td><%= number_to_currency(budget.remaining) %></td>
           </tr>
           <% end %>
 </tbody>
 </table>
 <br>
+<div id="donut" class="graph" style="padding: 0px; position: relative;"><canvas class="flot-base" width="400" height="300"></canvas><canvas class="flot-overlay" width="400" height="300" style="position: absolute; left: 0px; top: 0px;"></canvas>
+<div class="legend"><div style="position: absolute; width: 72px; height: 182px; top: 5px; right: 5px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:5px;right:5px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(237,194,64);overflow:hidden"></div></div></td><td class="legendLabel">Series1</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(175,216,248);overflow:hidden"></div></div></td><td class="legendLabel">Series2</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(203,75,75);overflow:hidden"></div></div></td><td class="legendLabel">Series3</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(77,167,77);overflow:hidden"></div></div></td><td class="legendLabel">Series4</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(148,64,237);overflow:hidden"></div></div></td><td class="legendLabel">Series5</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(189,155,51);overflow:hidden"></div></div></td><td class="legendLabel">Series6</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(140,172,198);overflow:hidden"></div></div></td><td class="legendLabel">Series7</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(162,60,60);overflow:hidden"></div></div></td><td class="legendLabel">Series8</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(61,133,61);overflow:hidden"></div></div></td><td class="legendLabel">Series9</td></tr></tbody></table></div>
+</div>
+<script type="text/javascript">
+   $(function () {
+       var data = [
+            { label: "Read", data: 50, color: '#614E43' },
+            { label: "Unread", data: 150, color: '#F5912D' }
+        ];
+        $.plot($("#donut"), data,
+        {
+                series: {
+                    pie: { 
+                        innerRadius: 0.5,
+                        show: true
+                    }
+                }
+        });
+    });
+</script>
 

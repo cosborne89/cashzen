@@ -26,6 +26,7 @@ class Category < ActiveRecord::Base
     
     before_save :update_cash
     before_save :set_frequency
+    before_save :modify_this_months_budget
     
 
     
@@ -45,4 +46,12 @@ class Category < ActiveRecord::Base
             self.frequency = "Single"
         end
     end
+    
+    def modify_this_months_budget
+        @month = Date.today.month
+        @year = Date.today.year
+        self.budgets.where(year: @year, month: @month).first.initial = self.monthly_spend if self.budgets.where(year: @year, month: @month).first
+        self.budgets.where(year: @year, month: @month).first.save!
+    end
+        
 end

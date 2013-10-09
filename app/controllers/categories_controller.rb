@@ -55,7 +55,8 @@ class CategoriesController < ApplicationController
       accrued = []
       cumulative = @category.initial_cash
       @budgets.each do |budget|
-          dates << "#{budget.month}, #{budget.year}"
+          @month_name = month_name(budget.month)
+          dates << "#{month_name(budget.month)[0..2]}, #{budget.year}"
           remainings << budget.remaining.to_f
           cumulative = cumulative+budget.remaining
           accrued << cumulative.to_f

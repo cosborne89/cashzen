@@ -4,12 +4,15 @@ class BudgetsController < ApplicationController
   # GET /budgets
   # GET /budgets.json
   def index
+      #not really functioning as an index. this is functioning as a summary for this month.
       @budgets = Budget.where(year: Date.today.year, month: Date.today.month)
       @year = Date.today.year
       @month = Date.today.month
+      gon.spent = @budgets.first.remaining
   end
 
   def month
+      #this is the calendar view
       @categories = current_user.categories
       @month = Date.today.month
       @year = Date.today.year
@@ -19,6 +22,7 @@ class BudgetsController < ApplicationController
   end
   
   def summary_by_month
+      #this is #index but for other months.
       @budgets = Budget.where(year: params[:year], month: params[:month])
       @year = params[:year]
       @month = params[:month]
@@ -27,6 +31,7 @@ class BudgetsController < ApplicationController
   # GET /budgets/1
   # GET /budgets/1.json
   def show
+      #functioning as a detailed look at this month (spending where)
   end
 
   # GET /budgets/new

@@ -1,0 +1,13 @@
+<table class="border-table">
+    <tr>
+        <th>Category</th>
+        <th>Saved Over Time</th>
+    </tr>
+    <% local_categories.each do |category| %>
+    <tr>
+        <td><%= link_to category.title, category %></td>
+        <td><%= category.budgets.sum.to_a(&:remaining) %></td>
+    </tr>
+    <% end %>
+
+</table>
