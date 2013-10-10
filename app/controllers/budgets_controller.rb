@@ -1,4 +1,5 @@
 class BudgetsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_budget, only: [:show, :edit, :update, :destroy]
 
   # GET /budgets
@@ -8,7 +9,13 @@ class BudgetsController < ApplicationController
       @budgets = Budget.where(year: Date.today.year, month: Date.today.month)
       @year = Date.today.year
       @month = Date.today.month
-      gon.spent = @budgets.first.remaining
+      gon.prop_spent = []
+      gon.prop_remaining = []
+      @budgets.each do |budget|
+        gon.prop_spent << budget.remaining/budget.initial
+        gon.prop_remaining << 1-budget.remaining/budget.initial
+      end
+      gon.number_budgets = gon.prop_spent.count
   end
 
   def month
@@ -26,6 +33,13 @@ class BudgetsController < ApplicationController
       @budgets = Budget.where(year: params[:year], month: params[:month])
       @year = params[:year]
       @month = params[:month]
+      gon.prop_spent = []
+      gon.prop_remaining = []
+      @budgets.each do |budget|
+        gon.prop_spent << budget.remaining/budget.initial
+        gon.prop_remaining << 1-budget.remaining/budget.initial
+      end
+      gon.number_budgets = gon.prop_spent.count
   end
   
   # GET /budgets/1
