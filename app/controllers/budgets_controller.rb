@@ -12,8 +12,8 @@ class BudgetsController < ApplicationController
       gon.prop_spent = []
       gon.prop_remaining = []
       @budgets.each do |budget|
-        gon.prop_spent << budget.remaining/budget.initial
-        gon.prop_remaining << 1-budget.remaining/budget.initial
+        gon.prop_spent << (budget.initial-budget.remaining)/budget.initial
+        gon.prop_remaining << budget.remaining/budget.initial
       end
       gon.number_budgets = gon.prop_spent.count
   end
@@ -36,8 +36,8 @@ class BudgetsController < ApplicationController
       gon.prop_spent = []
       gon.prop_remaining = []
       @budgets.each do |budget|
-        gon.prop_spent << budget.remaining/budget.initial
-        gon.prop_remaining << 1-budget.remaining/budget.initial
+        gon.prop_spent << (budget.initial-budget.remaining)/budget.initial
+        gon.prop_remaining << budget.remaining/budget.initial
       end
       gon.number_budgets = gon.prop_spent.count
   end
