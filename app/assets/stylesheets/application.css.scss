@@ -25,13 +25,17 @@ div.container {
   @include outer-container;
 }
 
+.main-content {
+  @include outer-container;
+}
+
 .blue_button {
     @include button(simple, #0B7ABF);
 }
 
 
 .block-container {
-	@include outer-container;
+    @include outer-container;
 }
 
 .block-half {
@@ -44,9 +48,19 @@ div.container {
 	margin: 0;
 }
 
+.block-half-two-thirds {
+	@include span-columns(4 of 6);
+	margin: 0;
+}
+
+.block-half-third {
+	@include span-columns(2 of 6);
+	margin: 0;
+}
+
 .block-third {
 	@include span-columns(4);
-	padding: 2em;
+	margin: 0;
 }
 
 .block-sixth {
@@ -55,6 +69,14 @@ div.container {
 
 .text-right {
 	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.one-em-pad {
+	padding: 1em;
 }
 
 .archive-link {

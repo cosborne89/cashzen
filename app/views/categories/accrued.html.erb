@@ -1,24 +1,24 @@
-<h1></h1><h2>Variable Monthly Expenses</h2>
-<%= render 'accrued_table_section', :local_categories => @categories.variable %>
+<div class="block-half one-em-pad"%>
+	<h2>Variable Monthly Expenses</h2>
+	<%= render 'accrued_table_section', :local_categories => @categories.variable %>
+</div>
 
-<br>
+<div class="block-half one-em-pad"%>
+	<h2>Fixed Monthly Expenses</h2>
+	<%= render 'accrued_table_section', :local_categories => @categories.fixed %>
+</div>
 
-<h2>Fixed Monthly Expenses</h2>
-<%= render 'accrued_table_section', :local_categories => @categories.fixed %>
+<div class="block-half one-em-pad"%>
+	<h2>Occasional Expenses</h2>
+	<%= render 'accrued_table_section', :local_categories => @categories.occasional %>
+</div>
 
-<br>
+<div class="block-half one-em-pad"%>
+	<h2>Monthly Debt Payments</h2>
+	<%= render 'accrued_table_section', :local_categories => @categories.debt %>
+</div>
 
-<h2>Occasional Expenses</h2>
-<%= render 'accrued_table_section', :local_categories => @categories.occasional %>
-
-<br>
-
-<h2>Monthly Debt Payments</h2>
-<%= render 'accrued_table_section', :local_categories => @categories.debt %>
-
-<br>
-
-<h2>Monthly Savings</h2>
-<%= render 'accrued_table_section', :local_categories => @categories.savings %>
-
-<br>
+<div class="block-half one-em-pad"%>
+	<h2>Monthly Savings</h2>
+	<%= render 'accrued_table_section', :local_categories => @categories.savings %>
+</div>

@@ -1,3 +1,10 @@
 <h2><%= @user.email%>'s Dashboard</h2>
 
-<p>I am a <%= @user.role %>
+<p>I am a <%= @user.role %></p>
+
+<div class="banner">
+    <ul>
+        <li><%= link_to "Edit my registration", edit_user_registration_path(current_user) %></li>
+    	<li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    </ul>
+</div>

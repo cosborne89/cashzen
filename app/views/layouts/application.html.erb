@@ -11,31 +11,13 @@
 <body>
 <div class="container">
     <div class="banner">
-        <h1>CashZen</h1>
+        <h1 class="title text-center">CashZen</h1>
         <%= render 'shared/nav_actions' if user_signed_in? %>
-        <p class="notice"><%= notice %></p>                                                                                                                                                                                                         
+        <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p> 
     </div>
     <div class="content">
         <%= yield %>
-    </div>
-    <div class="banner">
-        <% if can? :manage, :all %>
-            <ul>
-            	<li><%= link_to current_user.username, user_path(current_user) %>'s Dashboard (is <%= current_user.role %>):</li>
-                <li><%= link_to "Edit my registration", edit_user_registration_path(current_user) %></li>
-            	<li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li> 
-            </ul>
-            <% elsif user_signed_in? %>
-            <ul>
-            	<li><%= link_to current_user.username, user_path(current_user) %>'s Dashboard (is <%= current_user.role %>): </li>
-                <li><%= link_to "Edit my registration", edit_user_registration_path(current_user) %></li>
-            	<li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-            </ul>
-            <% else %>
-            <%= link_to 'Login', login_url %> | <%= link_to 'Sign Up', new_user_registration_url %>
-        
-        <% end %>
     </div>
 
 </div>

@@ -1,13 +1,6 @@
-<table class="border-table">
-    <tr>
-        <th>Category</th>
-        <th>Saved Over Time</th>
-    </tr>
-    <% local_categories.each do |category| %>
-    <tr>
-        <td><%= link_to category.title, category %></td>
-        <td><%= category.budgets.to_a.sum(&:remaining) %></td>
-    </tr>
-    <% end %>
-
-</table>
+<div class="block-half-half">Category</div>
+<div class="block-half-half text-right">Saved Over Time</div>
+<% local_categories.each do |category| %>
+    <div class="block-half-half"><%= link_to category.title, category %></div>
+    <div class="block-half-half text-right"><%= number_to_currency(category.budgets.to_a.sum(&:remaining)) %></div>
+<% end %>
