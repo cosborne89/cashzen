@@ -30,14 +30,37 @@ div.container {
 }
 
 
-
-
-.border-table {
-    border-collapse:collapse;
-    width: 100%;
+.block-container {
+	@include outer-container;
 }
 
-.border-table th, .border-table td {
-    border: 1px solid grey;
-    padding: 1em;
+.block-half {
+	@include span-columns(6);
+	margin: 0;
+}
+
+.block-half-half {
+	@include span-columns(3 of 6);
+	margin: 0;
+}
+
+.block-third {
+	@include span-columns(4);
+	padding: 2em;
+}
+
+.block-sixth {
+	@include span-columns(2);
+}
+
+.text-right {
+	text-align: right;
+}
+
+.archive-link {
+	display: inline-block;
+}
+
+.float-right {
+	float: right;
 }

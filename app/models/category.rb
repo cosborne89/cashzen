@@ -51,7 +51,7 @@ class Category < ActiveRecord::Base
         @month = Date.today.month
         @year = Date.today.year
         self.budgets.where(year: @year, month: @month).first.initial = self.monthly_spend if self.budgets.where(year: @year, month: @month).first
-        self.budgets.where(year: @year, month: @month).first.save! if self.budgets.where(year: @year, month: @month).first
+        #self.budgets.where(year: @year, month: @month).first.save! if self.budgets.where(year: @year, month: @month).first
     end
         
 end
