@@ -21,3 +21,7 @@ _ Transactions per month view routing similar to budgets (/transactions is this 
 _ Transactions view per category? What is the value there? What about per classification?
 _ Handle December/January issues for :year/:month in budget views
 _ Budget#monthly_summary pie chart for each budget - load data as array. graph is working but not taking data yet
+_ Sort Spending Summary (/budgets) by spending groups.
+_ Sort budgets by alphabetical or subgroups in /transactions/new
+_ /budgets with spending headers and colorized statements.
+

@@ -5,7 +5,9 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = current_user.transactions.order(date: :asc) unless current_user.transactions.all.blank?
+    if current_user.transactions.exists?
+      @transactions = current_user.transactions.order(date: :asc)
+    end
   end
 
   # GET /transactions/1

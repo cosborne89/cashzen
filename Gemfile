@@ -60,3 +60,5 @@ end
 #Gems specific to this app
 gem 'gon'
 gem 'flot-rails'
+gem 'pg'
+gem 'will_paginate'

@@ -13,13 +13,13 @@
     <div class="banner">
         <h1 class="title text-center">CashZen</h1>
         <%= render 'shared/nav_actions' if user_signed_in? %>
+        <%= render 'layouts/build_transaction' if user_signed_in? %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p> 
     </div>
     <div class="content">
         <%= yield %>
     </div>
-
 </div>
 </body>
 </html>

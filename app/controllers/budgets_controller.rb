@@ -7,15 +7,10 @@ class BudgetsController < ApplicationController
   def index
       #not really functioning as an index. this is functioning as a summary for this month.
       @budgets = Budget.where(year: Date.today.year, month: Date.today.month)
-      @year = Date.today.year
-      @month = Date.today.month
-      gon.prop_spent = []
-      gon.prop_remaining = []
-      @budgets.each do |budget|
-        gon.prop_spent << (budget.initial-budget.remaining)/budget.initial
-        gon.prop_remaining << budget.remaining/budget.initial
-      end
-      gon.number_budgets = gon.prop_spent.count
+      @date = Date.today.beginning_of_month
+      @year = @date.year
+      @month = @date.month
+      summary_by_month_build
   end
 
   def month
@@ -29,10 +24,16 @@ class BudgetsController < ApplicationController
   end
   
   def summary_by_month
-      #this is #index but for other months.
+      #this is #index but for other months with substring appended to url
       @budgets = Budget.where(year: params[:year], month: params[:month])
-      @year = params[:year]
-      @month = params[:month]
+      @year = params[:year].to_i
+      @month = params[:month].to_i
+      @date = Date.new(@year,@month,1)
+      summary_by_month_build
+      render 'index'
+  end
+
+  def summary_by_month_build
       gon.prop_spent = []
       gon.prop_remaining = []
       @budgets.each do |budget|

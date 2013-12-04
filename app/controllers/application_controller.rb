@@ -4,12 +4,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :month_name
   
-before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  before_filter :build_transaction
+
+  def build_transaction
+      @build_transaction = Transaction.new
+  end
+
 
   def month_name(month)
       Date::MONTHNAMES[month]
   end
-  
+
 
   protected
 

@@ -1,0 +1,27 @@
+<%= form_for(@build_transaction) do |f| %>
+  <% if @build_transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@build_transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @build_transaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" id="quickadd">
+    <h4>Quick Add</h4>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :category %>
+    <%= f.select :category_id, current_user.categories.map { |category| [category.title, category.id] }, :include_blank => true %>
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit %>
+  </div>
+<% end %>
