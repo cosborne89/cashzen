@@ -1,55 +1,22 @@
-<% if Budget.where(date: @date - 1.month).exists? %>
-  <div class="archive-link float-left ">
-    <%= link_to "#{month_name(@month.to_i-1)}, #{@year}", summary_by_month_path(@year, @month.to_i-1) %>
-  </div> 
-<% end %>
-<% if Budget.where(date: @date + 1.month).exists? %>
-  <div class="archive-link float-right ">
-    <%= link_to "#{month_name(@month.to_i+1)}, #{@year}", summary_by_month_path(@year, @month.to_i+1) %>
-  </div> 
-<% end %>
+<div id="monthly-summary-block">
+  <% if Budget.where(date: @date - 1.month).exists? %>
+    <div class="archive-link float-left ">
+      <%= link_to "#{month_name(@month.to_i-1)}, #{@year}", summary_by_month_path(@year, @month.to_i-1) %>
+    </div> 
+  <% end %>
+  <% if Budget.where(date: @date + 1.month).exists? %>
+    <div class="archive-link float-right ">
+      <%= link_to "#{month_name(@month.to_i+1)}, #{@year}", summary_by_month_path(@year, @month.to_i+1) %>
+    </div> 
+  <% end %>
 
-<h1>Spending Summary for <%= month_name(@month.to_i)%>, <%= @year %>.</h1>
-      <% if @budgets.exists? %>  
-        <table class="border-table">
-        <tbody>
-        <% i = 0 %>
-        <% @budgets.each do |budget|%> 
-          <div class="block-container">
-            <div class="block-third">
-              <%= link_to budget.title, budget %>
-            </div>
-            <div class="block-third text-right">
-              <%= number_to_currency(budget.initial) %>
-            </div>
-            <div class="block-third text-right">
-              <%= number_to_currency(budget.remaining) %>
-            </div>
-          </div>
-        <% end %>
-      <% else %>
-        <p>There are no transactions for the month selected. Return to the <%= link_to "current month", budgets_path %> or <%= link_to "create a transaction", new_transaction_path %>.</p>
-      <% end %> 
-</tbody>
-</table>
-<br>
-
-
-<script type="text/javascript">
-$(function () {
-    var id = [];
-    var data = [];
-    for (var i = 0; i < gon.number_budgets; i += 1) {
-        data.push([
-                { label: "Spent", data: gon.prop_spent[i], color: '#614E43' },
-                { label: "Remaining", data: gon.prop_remaining[i], color: '#53972F' }
-            ]); 
-        id.push("#donut_"+i);
-    };
-    for(var i = 0; i < gon.number_budgets; i += 1) {
-        $.plot($(id[i]), data[i], { series: { pie: {  innerRadius: 0.3, show: true, radius: 0.6}} });
-    }
-
-
-});
-</script>
+  <div class="month-block">
+    <h1>Spending Summary for <%= month_name(@month.to_i)%>, <%= @year %>.</h1>
+      <%= render "monthly_category_block", cat_title: "Income", categories: @categories.income, date: @date %>
+      <%= render "monthly_category_block", cat_title: "Variable Expenses", categories: @categories.variable, date: @date %>
+      <%= render "monthly_category_block", cat_title: "Fixed Expenses", categories: @categories.fixed, date: @date %>
+      <%= render "monthly_category_block", cat_title: "Occasional Expenses", categories: @categories.occasional, date: @date %>
+      <%= render "monthly_category_block", cat_title: "Debt Payments", categories: @categories.debt, date: @date %>
+      <%= render "monthly_category_block", cat_title: "Savings", categories: @categories.savings, date: @date %>
+  </div>
+</div>

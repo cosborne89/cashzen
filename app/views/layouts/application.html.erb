@@ -10,16 +10,18 @@
 </head>
 <body>
 <div class="container">
-    <div class="banner">
+    <header class="banner">
         <h1 class="title text-center">CashZen</h1>
-        <%= render 'shared/nav_actions' if user_signed_in? %>
-        <%= render 'layouts/build_transaction' if user_signed_in? %>
+        <%= render 'layouts/nav_actions' if user_signed_in? %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p> 
-    </div>
-    <div class="content">
+    </header>
+    <article class="content">
         <%= yield %>
-    </div>
+    </article>
+    <aside class="global-transaction-form">
+      <%= render 'layouts/build_transaction' if user_signed_in? %>
+    </aside>
 </div>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<div class="category-block">
+  <h3><%= cat_title %></h3>
+  <div class="column-line-item">
+    <div class="column">
+      <h4>Category</h4>
+    </div>
+    <div class="column text-right">
+      <h4>Budgeted</h4>
+    </div>
+    <div class="column text-right">
+      <h4>Spent</h4>
+    </div>
+    <div class="column text-right">
+      <h4>Remaining</h4>
+    </div>
+  </div>
+    <% categories.each do |category| %> 
+      <% cat_budget = category.budgets.where(date: @date).first  %>
+          <div class="column-line-item">
+            <div class="column">
+              <% if cat_budget %>
+                <%= link_to category.title, cat_budget %>
+              <% else %>
+                <%= category.title %>
+              <% end %>
+            </div>
+            <div class="column text-right">
+              <% if cat_budget %>
+                <%= number_to_currency(cat_budget.initial) %>
+              <% else %>
+                <%= number_to_currency(category.monthly_spend) %>
+              <% end %>
+            </div>
+            <div class="column text-right">
+              <% if cat_budget %>
+                <%= number_to_currency(cat_budget.initial-cat_budget.remaining) %>
+              <% else %>
+                <%= number_to_currency(category.monthly_spend) %>
+              <% end %>
+            </div>
+            <div class="column text-right">
+              <% if cat_budget %>
+                <%= number_to_currency(cat_budget.remaining) %>
+              <% else %>
+                <%= number_to_currency(category.monthly_spend) %>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+</div>

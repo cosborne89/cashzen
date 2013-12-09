@@ -9,9 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require_tree
  */
 
 @import "bourbon";
+@import "grid-settings";
 @import "neat";
 
 /*All other stylesheets must be imported after this one */
@@ -23,48 +25,51 @@
 
 div.container {
   @include outer-container;
+  .banner {
+  	@include outer-container;
+  	.title {
+  		display: inline-block;
+  		@include span-columns(2 of 12);
+  	}
+  	.nav-actions {
+  		display: inline-block;
+  		@include span-columns(10 of 12);
+      @include omega;
+  		.nav-action {
+  			display: inline-block;
+  			@include span-columns(2 of 10);
+  			margin-top: 1em;
+  		}
+  	}
+  }
+  .content {
+  	@include span-columns(9 of 12);
+    @include outer-container;
+  	display: inline-block;
+  }
+  .global-transaction-form {
+  	@include span-columns(3 of 12);
+  	float: right;
+  	display: inline-block;
+  }
 }
 
-.main-content {
-  @include outer-container;
-}
 
 .blue_button {
     @include button(simple, #0B7ABF);
 }
 
+.green_button {
+	@include button(simple, #4CC708);
+}
+.page-title-inline {
+	h2, h4 {
+		display: inline;
+	}
+}
 
 .block-container {
-    @include outer-container;
-}
-
-.block-half {
-	@include span-columns(6);
-	margin: 0;
-}
-
-.block-half-half {
-	@include span-columns(3 of 6);
-	margin: 0;
-}
-
-.block-half-two-thirds {
-	@include span-columns(4 of 6);
-	margin: 0;
-}
-
-.block-half-third {
-	@include span-columns(2 of 6);
-	margin: 0;
-}
-
-.block-third {
-	@include span-columns(4);
-	margin: 0;
-}
-
-.block-sixth {
-	@include span-columns(2);
+	@include outer-container;
 }
 
 .text-right {
@@ -75,14 +80,94 @@ div.container {
 	text-align: center;
 }
 
-.one-em-pad {
-	padding: 1em;
-}
-
 .archive-link {
 	display: inline-block;
 }
 
 .float-right {
 	float: right;
+}
+
+
+#budget-analysis {
+  .analysis-line-item {
+    .block-third {
+      @include span-columns(3 of 9);
+    }
+    .block-third:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+#summary_analysis {
+  .block-class {
+    .summary-line-item {
+      .detail-block {
+        @include span-columns(4 of 9);
+      }
+    }
+    .new-cat-empty {
+      @include span-columns(4 of 9);
+      margin-right: 0;
+      display: block;
+    }
+    .new-cat-present {
+        @include span-columns(4 of 4);
+        margin-right: 0;
+        display: block;
+      }
+  }
+  .summary-block-half {
+    @include span-columns(4 of 9);
+    display: inline-block;
+  }
+  .summary-block-full {
+    @include span-columns(9 of 9);
+  }
+  .second-half {
+    margin-right: 0;
+    @include shift(1);
+  }
+}
+
+#accrued-block {
+  .block-organizer {
+  @include span-columns(9 of 9);
+  margin-right: 0;
+    .block-section {
+      @include span-columns(4 of 9);
+      .left {
+        @include span-columns (2 of 4);
+      }
+      .right {
+        @include span-columns (2 of 4);
+        margin-right: 0;
+      }
+    }
+    .block-right {
+      margin-right: 0;
+      margin-left: 10.5%;
+    } 
+  }
+}
+
+#monthly-summary-block {
+  .category-block {
+    @include span-columns(9 of 9);
+    margin-right: 0;
+    h3 {
+      font-weight: 400;
+    }
+    h4 {
+      margin: 0;
+      font-weight: 400;
+    }
+    .column-line-item {
+      .column {
+        @include span-columns(2 of 9);
+      }
+
+    }
+  }
 }

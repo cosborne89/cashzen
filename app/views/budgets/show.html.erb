@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @budget.title %>
-</p>
+<div class="budgets-tabs">
+	<% @category_budgets.each do |budget| %>
+		<div class="budget-thumb-link">
+			<%= link_to budget do %>
+				<%= budget.date.strftime("%b") %>
+				<%= budget.date.strftime("%y") %>
+			<% end %>
+		</div>
+	<% end %>
+</div>		
+<div class="page-title-inline">
+<h2><%= @budget.title %></h2><h4>, <%= @budget.date.strftime("%B %Y")%></h4>	
+</div>
 
-<p>
-  <strong>ID:</strong>
-  <%= @budget.id %>
-</p>
 <p>
   <strong>Remaining:</strong>
   <%= @budget.remaining %>
@@ -19,20 +24,7 @@
   <%= @budget.date.strftime("%B %Y")%>
 </p>
 
-<table class="border-table">
-    <tr>
-        <th>Transaction</th>
-        <th>Date</th>
-        <th>Amount</th>
-    </tr>
-    <% @budget.transactions.each do |transaction|%>
-    <tr>
-        <td><%= link_to transaction.title, transaction %></td>
-        <td><%= transaction.date %></td>
-        <td><%= transaction.amount %></td>
-    </tr>
-    <% end %>
-</table>
+<%= render 'transactions/transaction_table', transactions: @transactions %>
 
 <%= link_to 'Edit', edit_budget_path(@budget) %> |
 <%= link_to 'Back', budgets_path %>

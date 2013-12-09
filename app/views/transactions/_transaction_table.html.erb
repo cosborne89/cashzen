@@ -1,0 +1,29 @@
+<% if transactions %>
+<h1>Listing transactions</h1>
+<table class="border-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Date</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% transactions.each do |transaction| %>
+      <tr>
+        <td><%= link_to transaction.title, transaction %></td>
+        <td><%= transaction.category.title %></td>
+        <td><%= transaction.date %></td>
+        <td><%= number_to_currency(transaction.amount) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate transactions %>
+<% else %>
+<h3>No transactions yet. <%= link_to "Add one now.", new_transaction_path %></h3>
+<% end %>
+<br>

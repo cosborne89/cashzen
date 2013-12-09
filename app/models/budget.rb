@@ -8,7 +8,7 @@ class Budget < ActiveRecord::Base
     after_save :update_category
     
     def update_remaining
-        self.remaining = self.initial - self.transactions.to_a.sum(&:amount)
+        self.remaining = self.initial.to_f - self.transactions.sum(:amount)
         #self.net_cash = self.initial_cash - self.monthly_remaining
     end
     

@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field" id="quickadd">
-    <h4>Quick Add</h4>
+  <div id="quickadd">
+    <h2>Quick Add</h2>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %></br>
     <%= f.label :category %>
-    <%= f.select :category_id, current_user.categories.map { |category| [category.title, category.id] }, :include_blank => true %>
+    <%= f.select :category_id, current_user.categories.map { |category| [category.title, category.id] }, :include_blank => true %></br>
     <%= f.label :date %>
-    <%= f.date_select :date %>
+    <%= f.date_select :date %></br>
     <%= f.label :amount %>
-    <%= f.text_field :amount %>
+    <%= f.text_field :raw_amount %></br>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit %>
+    <%= f.submit "Add Transaction", :class => "green_button" %>
   </div>
 <% end %>

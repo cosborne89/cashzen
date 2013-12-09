@@ -7,6 +7,7 @@ class BudgetsController < ApplicationController
   def index
       #not really functioning as an index. this is functioning as a summary for this month.
       @budgets = Budget.where(year: Date.today.year, month: Date.today.month)
+      @categories = current_user.categories
       @date = Date.today.beginning_of_month
       @year = @date.year
       @month = @date.month
@@ -14,7 +15,7 @@ class BudgetsController < ApplicationController
   end
 
   def month
-      #this is the calendar view
+      #this is the calendar view, which works as current month only. copy methods from summary_by_month to do archived months
       @categories = current_user.categories
       @month = Date.today.month
       @year = Date.today.year
@@ -34,6 +35,7 @@ class BudgetsController < ApplicationController
   end
 
   def summary_by_month_build
+    @categories = current_user.categories
       gon.prop_spent = []
       gon.prop_remaining = []
       @budgets.each do |budget|
@@ -47,6 +49,8 @@ class BudgetsController < ApplicationController
   # GET /budgets/1.json
   def show
       #functioning as a detailed look at this month (spending where)
+      @transactions = @budget.transactions.order(date: :asc).paginate(:page => params[:page], :per_page => 30)
+      @category_budgets = @budget.category.budgets
   end
 
   # GET /budgets/new

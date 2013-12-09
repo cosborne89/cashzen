@@ -1,81 +1,93 @@
 <% unless @balance || @debt_to_income || @savings_to_income || @needs || @wants || @saves %>
-<h3>Budget Analytics will appear after you add categories. <%= link_to "Add a category now.", new_category_path %></h3>
+<h3>Budget Analytics will appear after you add categories. <%= link_to"Add a category now.", new_category_path %></h3>
 <% end %>
-<div class="block-container" %>
+<div id="budget-analysis" class="block-container" %>
     <% if @balance %>
-        <div class="block-third one-em-pad">Budget Balance</div>
-        <div class="block-third text-center one-em-pad">
-            <% if @balance < 0 %>
-                &#x2717
-            <% else %>
-                &#x2713
-            <% end %>
+        <div class="analysis-line-item">
+            <div class="block-third">Budget Balance</div>
+            <div class="block-third text-center">
+                <% if @balance < 0 %>
+                    &#x2717
+                <% else %>
+                    &#x2713
+                <% end %>
+            </div>
+            <div class="block-third"><%= number_to_currency(@balance) %></div>
         </div>
-        <div class="block-third one-em-pad"><%= number_to_currency(@balance) %></div>
     <% end %>
     <% if @debt_to_income %>
-        <div class="block-third one-em-pad">
-            Debt-to-Income Ratio (less than 36%)</div>
-        <div class="block-third text-center one-em-pad">
-            <% if @debt_to_income > 0.36 %>
-                &#x2717
-            <% else %>
-                &#x2713
-            <% end %>
+        <div class="analysis-line-item">
+            <div class="block-third">
+                Debt-to-Income Ratio (less than 36%)</div>
+            <div class="block-third text-center">
+                <% if @debt_to_income > 0.36 %>
+                    &#x2717
+                <% else %>
+                    &#x2713
+                <% end %>
+            </div>
+            <div class="block-third">
+                <%= number_to_percentage(@debt_to_income*100) %></div>
         </div>
-        <div class="block-third one-em-pad">
-            <%= number_to_percentage(@debt_to_income*100) %></div>
     <% end %>
     <% if @savings_to_income %>
-        <div class="block-third one-em-pad">
-            Savings-to-Income Ratio (greater than 15%)</div>
-        <div class="block-third text-center one-em-pad">
-            <% if @savings_to_income < 0.15 %>
-                &#x2717
-            <% else %>
-                &#x2713
-            <% end %>
+        <div class="analysis-line-item">
+            <div class="block-third">
+                Savings-to-Income Ratio (greater than 15%)</div>
+            <div class="block-third text-center">
+                <% if @savings_to_income < 0.15 %>
+                    &#x2717
+                <% else %>
+                    &#x2713
+                <% end %>
+            </div>
+            <div class="block-third">
+                <%= number_to_percentage(@savings_to_income*100) %></div>
         </div>
-        <div class="block-third one-em-pad">
-            <%= number_to_percentage(@savings_to_income*100) %></div>
     <% end %>
     <% if @needs %>
-        <div class="block-third one-em-pad">
-            Needs (less than 50%)</div>
-        <div class="block-third text-center one-em-pad">
-            <% if @needs > 0.50 %>
-                &#x2717
-            <% else %>
-                &#x2713
-            <% end %>
+        <div class="analysis-line-item">
+            <div class="block-third">
+                Needs (less than 50%)</div>
+            <div class="block-third text-center">
+                <% if @needs > 0.50 %>
+                    &#x2717
+                <% else %>
+                    &#x2713
+                <% end %>
+            </div>
+            <div class="block-third">
+                <%= number_to_percentage(@needs*100) %></div>
         </div>
-        <div class="block-third one-em-pad">
-            <%= number_to_percentage(@needs*100) %></div>
     <% end %>
    <% if @wants %>
-        <div class="block-third one-em-pad">
-            Wants (less than 30%)</div>
-        <div class="block-third text-center one-em-pad">
-            <% if @wants > 0.30 %>
-                &#x2717
-            <% else %>
-                &#x2713
-            <% end %>
+        <div class="analysis-line-item">
+            <div class="block-third">
+                Wants (less than 30%)</div>
+            <div class="block-third text-center">
+                <% if @wants > 0.30 %>
+                    &#x2717
+                <% else %>
+                    &#x2713
+                <% end %>
+            </div>
+            <div class="block-third">
+                <%= number_to_percentage(@wants*100) %></div>
         </div>
-        <div class="block-third one-em-pad">
-            <%= number_to_percentage(@wants*100) %></div>
     <% end %>
     <% if @saves %>
-        <div class="block-third one-em-pad">
-            Save (greater than 20%)</div>
-        <div class="block-third text-center one-em-pad">
-            <% if @saves < 0.20 %>
-                &#x2717
-            <% else %>
-                &#x2713
-            <% end %>
+        <div class="analysis-line-item">
+            <div class="block-third">
+                Save (greater than 20%)</div>
+            <div class="block-third text-center">
+                <% if @saves < 0.20 %>
+                    &#x2717
+                <% else %>
+                    &#x2713
+                <% end %>
+            </div>
+            <div class="block-third">
+                <%= number_to_percentage(@saves*100) %></div>
         </div>
-        <div class="block-third one-em-pad">
-            <%= number_to_percentage(@saves*100) %></div>
     <% end %>
-</table>
+</div>
