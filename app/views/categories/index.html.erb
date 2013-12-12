@@ -4,62 +4,64 @@
 <h1>Spending Summary</h1>
 <p><em>This is the amount you have budgeted for each category.</em></p>
 <div id="summary_analysis" class="block-container">
-<div class="block-class summary-block-full">
-    <h2>Monthly Income</h2>
+<div class="block-class block-body summary-block-full">
+    <div class="block-title"><h3>Monthly Income</h3></div>
     <% unless @categories.income.blank? %>
         <%= render 'summary_by_classification', :local_categories => @categories.income %>
-        <div class="new-cat-present"><%= link_to "Add a category.", new_category_path(:classification => "Income") %></div>
+        <div class="new-cat-present"><%= link_to "Add another category.", new_category_path(:classification => "Income") %></div>
     <% else %>
         <div class="new-cat-empty">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Income") %></div>
     <% end %>
 </div>
 
-<div class="block-class summary-block-full"><h2>Variable Monthly Expenses</h2>
+<div class="block-class block-body summary-block-full"><div class="block-title"><h3>Variable Monthly Expenses</h3></div>
     <% unless @categories.variable.blank? %>
         <%= render 'summary_by_classification', :local_categories => @categories.variable %>
-        <div class="new-cat-present"><%= link_to "Add a category.", new_category_path(:classification => "Variable Expense") %></div>
+        <div class="new-cat-present"><%= link_to "Add another category.", new_category_path(:classification => "Variable Expense") %></div>
     <% else %>
         <div class="new-cat-empty">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Variable Expense") %></div>
     <% end %>
 </div>
 
-<div class="block-class summary-block-half"><h2>Fixed Monthly Expenses</h2>
-    <% unless @categories.fixed.blank? %>
-        <%= render 'summary_by_classification', :local_categories => @categories.fixed %>
-    <% else %>
-        <div class="new-cat-present">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Fixed Expense") %></div>
-    <% end %>
+<div class="summary-block-full-container">
+    <div class="block-class block-body summary-block-half"><div class="block-title"><h3>Fixed Monthly Expenses</h3></div>
+        <% unless @categories.fixed.blank? %>
+            <%= render 'summary_by_classification', :local_categories => @categories.fixed %>
+            <div class="new-cat-present"><%= link_to "Add another category.", new_category_path(:classification => "Fixed Expense") %></div>
+        <% else %>
+            <div class="new-cat-present">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Fixed Expense") %></div>
+        <% end %>
+    </div>
+
+    <div class="block-class block-body summary-block-half second-half"><div class="block-title"><h3>Occasional Expenses</h3></div>
+        <% unless @categories.occasional.blank? %>
+            <%= render 'summary_by_classification', :local_categories => @categories.occasional %>
+            <div class="new-cat-present"><%= link_to "Add another category.", new_category_path(:classification => "Occasional Expense") %></div>
+        <% else %>
+            <div class="new-cat-present">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Occasional Expense") %></div>
+        <% end %>
+    </div>
 </div>
 
-<div class="block-class summary-block-half second-half"><h2>Occasional Expenses</h2>
-    <% unless @categories.occasional.blank? %>
-        <%= render 'summary_by_classification', :local_categories => @categories.occasional %>
-    <% else %>
-        <div class="new-cat-present">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Occasional Expense") %></div>
-    <% end %>
-</div>
-
-
-<div class="block-class summary-block-half"><h2>Monthly Debt Payments</h2>
-    <% unless @categories.debt.blank? %>
-        <%= render 'summary_by_classification', :local_categories => @categories.debt %>
-    <% else %>
-        <div class="new-cat-present">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Debt Payment") %></div>
-    <% end %>
-</div>
+<div class="summary-block-full-container">
+    <div class="block-class block-body summary-block-half"><div class="block-title"><h3>Monthly Debt Payments</h3></div>
+        <% unless @categories.debt.blank? %>
+            <%= render 'summary_by_classification', :local_categories => @categories.debt %>
+            <div class="new-cat-present"><%= link_to "Add another category.", new_category_path(:classification => "Debt Payment") %></div>
+        <% else %>
+            <div class="new-cat-present">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Debt Payment") %></div>
+        <% end %>
+    </div>
 
 
 
-<div class="block-class summary-block-half second-half"><h2> Monthly Savings</h2>
-    <% unless @categories.savings.blank? %>
-        <%= render 'summary_by_classification', :local_categories => @categories.savings %>
-    <% else %>
-        <div class="new-cat-present">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Transfer to Savings") %></div>
-    <% end %>
+    <div class="block-class block-body summary-block-half second-half"><div class="block-title"><h3> Monthly Savings</h3></div>
+        <% unless @categories.savings.blank? %>
+            <%= render 'summary_by_classification', :local_categories => @categories.savings %>
+            <div class="new-cat-present"><%= link_to "Add another category.", new_category_path(:classification => "Transfer to Savings") %></div>
+        <% else %>
+            <div class="new-cat-present">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => "Transfer to Savings") %></div>
+        <% end %>
+    </div>
 </div>
 </div>
-
-
-
-
-<%= link_to 'New Category', new_category_path %>

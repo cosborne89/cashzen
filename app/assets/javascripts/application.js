@@ -12,8 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.datepicker
 //= require jquery.flot
 
 //= require jquery.flot.pie
 //= require turbolinks
 //= require_tree .
+
+
+$(function() {
+  $('.datepicker').datepicker();
+});

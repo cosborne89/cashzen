@@ -1,29 +1,25 @@
-<% if transactions %>
-<h1>Listing transactions</h1>
-<table class="border-table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Date</th>
-      <th>Amount</th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="transactions-block">
+  <% if transactions %>
+    <div class="column-line-item">
+      <div class="column"><h4>Title</h4></div>
+      <% if show_category %>
+        <div class="column"><h4>Category</h4></div>
+      <% end %>
+      <div class="column"><h4>Date</h4></div>
+      <div class="column"><h4>Amount</h4></div>
+    </div>
     <% transactions.each do |transaction| %>
-      <tr>
-        <td><%= link_to transaction.title, transaction %></td>
-        <td><%= transaction.category.title %></td>
-        <td><%= transaction.date %></td>
-        <td><%= number_to_currency(transaction.amount) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-      </tr>
+      <div class="column-line-item">
+          <div class="column"><%= link_to transaction.title, transaction %> ( <%= link_to 'X', transaction, method: :delete, data: { confirm: 'Are you sure?' } %> )</div>
+          <% if show_category %>
+            <div class="column"><%= transaction.category.title %></div>
+          <% end %>
+          <div class="column"><%= transaction.date %></div>
+          <div class="column"><%= number_to_currency(transaction.amount) %></div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-<%= will_paginate transactions %>
-<% else %>
-<h3>No transactions yet. <%= link_to "Add one now.", new_transaction_path %></h3>
-<% end %>
-<br>
+  <%= will_paginate transactions %>
+  <% else %>
+  <h3>No transactions yet. <%= link_to "Add one now.", new_transaction_path %></h3>
+  <% end %>
+</div>

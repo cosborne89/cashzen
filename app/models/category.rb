@@ -28,7 +28,17 @@ class Category < ActiveRecord::Base
     before_save :set_frequency
     before_save :modify_this_months_budget
     
-
+    def self.for_select
+        {
+          'Income'   => where(:classification => "Income" ).map { |p| [p.title, p.id] },
+          'Variable Expense'   => where(:classification => "Variable Expense" ).map { |p| [p.title, p.id] },
+          'Fixed Expense'   => where(:classification => "Fixed Expense" ).map { |p| [p.title, p.id] },
+          'Occasional Expense'   => where(:classification => "Occasional Expense" ).map { |p| [p.title, p.id] },
+          'Debt Payment'   => where(:classification => "Debt Payment" ).map { |p| [p.title, p.id] },
+          'Transfer to Savings'   => where(:classification => "Transfer to Savings" ).map { |p| [p.title, p.id] },
+        }
+    end
+    
     
     def update_cash
         if self.net_cash.blank?

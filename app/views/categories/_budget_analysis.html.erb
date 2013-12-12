@@ -1,7 +1,8 @@
 <% unless @balance || @debt_to_income || @savings_to_income || @needs || @wants || @saves %>
 <h3>Budget Analytics will appear after you add categories. <%= link_to"Add a category now.", new_category_path %></h3>
 <% end %>
-<div id="budget-analysis" class="block-container" %>
+<div id="budget-analysis" class="block-body block-container" %>
+<div class="block-title"><h3>Budget Scorecard</h3></div>
     <% if @balance %>
         <div class="analysis-line-item">
             <div class="block-third">Budget Balance</div>

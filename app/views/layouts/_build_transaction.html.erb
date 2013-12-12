@@ -13,14 +13,37 @@
 
   <div id="quickadd">
     <h2>Quick Add</h2>
-    <%= f.label :title %>
-    <%= f.text_field :title %></br>
-    <%= f.label :category %>
-    <%= f.select :category_id, current_user.categories.map { |category| [category.title, category.id] }, :include_blank => true %></br>
-    <%= f.label :date %>
-    <%= f.date_select :date %></br>
-    <%= f.label :amount %>
-    <%= f.text_field :raw_amount %></br>
+    <div class="left">
+      <%= f.label :title %>
+    </div>
+    <div class="right">
+      <%= f.text_field :title %>
+    </div>
+    <div class="left">
+      <%= f.label :category %>
+    </div>
+    <div class="right">
+    <% cities = {
+      'Income'      => ['Washington', 'New York'],
+      'Bulgaria' => ['Sofia', 'Svishtov']
+    } %>
+    <%= f.select :category_id, grouped_options_for_select(Category.for_select) %>
+
+      <%#= f.grouped_collection_select(:transaction, :category_id, current_user.categories, :classification, :title, :id, :title)%>
+      <%#= f.select :category_id, current_user.categories.order("title ASC").map { |category| [category.title, category.id] }, :include_blank => true %>
+    </div>
+    <div class="left">
+      <%= f.label :date %>
+    </div>
+    <div class="right">
+      <%= f.text_field :date, class: "datepicker"  %>
+    </div>
+    <div class="left">
+      <%= f.label :amount %>
+    </div>
+    <div class="right">
+      <%= f.text_field :raw_amount %>
+    </div>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.submit "Add Transaction", :class => "green_button" %>
   </div>

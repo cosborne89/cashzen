@@ -1,5 +1,5 @@
-<div class="left">Category</div>
-<div class="right text-right">Saved Over Time</div>
+<div class="left"><h4>Category</h4></div>
+<div class="right text-right"><h4>Saved Over Time</h4></div>
 <% if local_categories.exists? %>
 	<% local_categories.each do |category| %>
     	<div class="left"><%= link_to category.title, category %></div>

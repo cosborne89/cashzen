@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree
+ *= require jquery.ui.datepicker
  */
 
 @import "bourbon";
@@ -22,6 +23,16 @@
     font-family: 'Open Sans', Verdana, sans-serif;
     font-weight: 300;
 }
+
+.block-title {
+  background-color: #5B80C2;
+  padding: .2em;
+}
+.block-body {
+  background-color: #EBEFF7;
+  display: block;
+}
+
 
 div.container {
   @include outer-container;
@@ -51,6 +62,15 @@ div.container {
   	@include span-columns(3 of 12);
   	float: right;
   	display: inline-block;
+    .left {
+      @include span-columns(1 of 3);
+      margin-right: 0;
+    }
+    .right {
+      @include span-columns(2 of 3);
+      margin-right: 0;
+      text-align: right;
+    }
   }
 }
 
@@ -98,10 +118,18 @@ div.container {
       margin-right: 0;
     }
   }
+  h3 {
+    font-weight: 400;
+    padding-left: .5em;
+    margin: .25em 0;
+    color: white;
+  }
 }
 
 #summary_analysis {
   .block-class {
+    display: inline;
+    margin-bottom: 1em;
     .summary-line-item {
       .detail-block {
         @include span-columns(4 of 9);
@@ -118,6 +146,10 @@ div.container {
         display: block;
       }
   }
+  .summary-block-full-container {
+    display: block;
+    @include span-columns(9 of 9);
+  }
   .summary-block-half {
     @include span-columns(4 of 9);
     display: inline-block;
@@ -129,6 +161,12 @@ div.container {
     margin-right: 0;
     @include shift(1);
   }
+  h3 {
+    font-weight: 400;
+    padding-left: .5em;
+    margin: .25em 0;
+    color: white;
+  }
 }
 
 #accrued-block {
@@ -137,6 +175,9 @@ div.container {
   margin-right: 0;
     .block-section {
       @include span-columns(4 of 9);
+      h4 {
+        font-weight: 400;
+      }
       .left {
         @include span-columns (2 of 4);
       }
@@ -156,8 +197,15 @@ div.container {
   .category-block {
     @include span-columns(9 of 9);
     margin-right: 0;
+    margin-bottom: 1em; 
+    .category-detail {
+      @include span-columns(9 of 9);
+    }
     h3 {
       font-weight: 400;
+      padding-left: .5em;
+      margin: .25em 0;
+      color: white;
     }
     h4 {
       margin: 0;
@@ -167,7 +215,23 @@ div.container {
       .column {
         @include span-columns(2 of 9);
       }
+    }
+    .title-block {
+      @include span-columns(9 of 9);
+    }
+  }
+}
 
+.transactions-block {
+  h4 {
+    font-weight: 400;
+  }
+  .column-line-item {
+  display: block;
+  @include span-columns(9 of 9);
+    .column {
+      @include span-columns(2 of 9);
+      display: inline-block;
     }
   }
 }
