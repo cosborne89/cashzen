@@ -30,8 +30,39 @@ div {
   }
 }
 
-#notice {
-  color: green;
+.notice {
+  background-color: #9BD545;
+  border-radius: 2px;
+  color: white;
+  padding: .2em 1em;
+}
+
+.limited-notice {
+  background-color: #9BD545;
+  border-radius: 2px;
+  color: white;
+  padding: .2em 1em;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.alert {
+  background-color: #DDB332;
+  border-radius: 2px;
+  color: white;
+  padding: .2em 1em;
+}
+
+.limited-alert {
+  background-color: #DDB332;
+  border-radius: 2px;
+  color: white;
+  padding: .2em 1em;
+  width: 50%;
+  margin: auto;
+  margin-top: .25em;
+  text-align: center;
 }
 
 .field_with_errors {

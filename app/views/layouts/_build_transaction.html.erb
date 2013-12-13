@@ -1,4 +1,4 @@
-<%= form_for(@build_transaction) do |f| %>
+<%= form_for(@build_transaction, :html => {:class => "pure-form"}) do |f| %>
   <% if @build_transaction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@build_transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
@@ -12,22 +12,18 @@
   <% end %>
 
   <div id="quickadd">
-    <h2>Quick Add</h2>
+    <h2>Quick Transaction</h2>
     <div class="left">
       <%= f.label :title %>
     </div>
     <div class="right">
-      <%= f.text_field :title %>
+      <%= f.text_field :title, placeholder: "Title" %>
     </div>
     <div class="left">
       <%= f.label :category %>
     </div>
     <div class="right">
-    <% cities = {
-      'Income'      => ['Washington', 'New York'],
-      'Bulgaria' => ['Sofia', 'Svishtov']
-    } %>
-    <%= f.select :category_id, grouped_options_for_select(Category.for_select) %>
+    <%= f.select :category_id, grouped_options_for_select(Category.for_select(current_user.id)) %>
 
       <%#= f.grouped_collection_select(:transaction, :category_id, current_user.categories, :classification, :title, :id, :title)%>
       <%#= f.select :category_id, current_user.categories.order("title ASC").map { |category| [category.title, category.id] }, :include_blank => true %>
@@ -36,15 +32,15 @@
       <%= f.label :date %>
     </div>
     <div class="right">
-      <%= f.text_field :date, class: "datepicker"  %>
+      <%= f.text_field :input_date, value: Date.today.strftime("%m/%d/%Y"), class: "datepicker"  %>
     </div>
     <div class="left">
       <%= f.label :amount %>
     </div>
     <div class="right">
-      <%= f.text_field :raw_amount %>
+      <%= f.text_field :raw_amount, placeholder: "Amount" %>
     </div>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit "Add Transaction", :class => "green_button" %>
+    <%= f.submit "Add Transaction", :class => "three-three-button button is-success" %>
   </div>
 <% end %>

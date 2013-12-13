@@ -3,7 +3,7 @@ class Transaction < ActiveRecord::Base
     belongs_to :category
     belongs_to :user
     
-    before_save :format_date
+    before_save :set_date
     before_save :eval_amount
     before_save :create_title
     before_save :find_or_create_budget
@@ -13,12 +13,16 @@ class Transaction < ActiveRecord::Base
     
     validates_presence_of :raw_amount, :category_id
 
+    attr_accessor :input_date
 
-    def format_date
-        #the jquery ui datepicker mixes the params up when it sends params to the model, so this resorts them.
-        rebuild_date = self.date
-        self.date = Date.new(rebuild_date.year, rebuild_date.day, rebuild_date.month)
+    def set_date
+        if self.input_date
+            self.date = Date.strptime(self.input_date, "%m/%d/%Y")
+        #if input_date is passed, then you are not using mobile, therefore you need to set the date here.
+        #even if date exists, you may still pass input_date during an edit, so you can't do unless self.date
+        end
     end
+
 
     def find_or_create_budget
         @budget = self.category.budgets.where(category_id: self.category_id, user_id: self.user_id, month: self.date.month, year: self.date.year).first
@@ -40,7 +44,7 @@ class Transaction < ActiveRecord::Base
     end
 
     def eval_amount
-        self.amount = eval(self.raw_amount)
+        self.amount = eval(self.raw_amount.tr("$", ''))
     end
 
     def update_budget

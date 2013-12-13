@@ -23,17 +23,22 @@ Cashzen::Application.routes.draw do
   resources :users
   
   devise_scope :user do
-    get "/login" => "devise/sessions#new"
-    get "/signup" => "devise/registrations#new"
-    delete "/logout" => "devise/sessions#destroy"
+    get "/login" => "devise/sessions#new", as: :login_path
+    get "/signup" => "devise/registrations#new", as: :signup_path
+    delete "/logout" => "devise/sessions#destroy", as: :logout_path
   end
   
-  
+  authenticated :user do
+    root :to => "budgets#index", :as => :authenticated_root
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-     root :to => 'budgets#index'
+devise_scope :user do
+  root to: "devise/sessions#new"
+end
      get "/welcome" => "pages#welcome"
      get "/about" => "pages#about"
      get "/contact" => "pages#contact"

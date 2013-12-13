@@ -6,7 +6,7 @@ class BudgetsController < ApplicationController
   # GET /budgets.json
   def index
       #not really functioning as an index. this is functioning as a summary for this month.
-      @budgets = Budget.where(year: Date.today.year, month: Date.today.month)
+      @budgets = current_user.budgets.where(year: Date.today.year, month: Date.today.month)
       @categories = current_user.categories
       @date = Date.today.beginning_of_month
       @year = @date.year
@@ -26,7 +26,7 @@ class BudgetsController < ApplicationController
   
   def summary_by_month
       #this is #index but for other months with substring appended to url
-      @budgets = Budget.where(year: params[:year], month: params[:month])
+      @budgets = current_user.budgets.where(year: params[:year], month: params[:month])
       @year = params[:year].to_i
       @month = params[:month].to_i
       @date = Date.new(@year,@month,1)
