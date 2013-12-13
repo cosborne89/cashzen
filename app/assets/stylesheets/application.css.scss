@@ -111,6 +111,7 @@ div.container {
 
 #budget-analysis {
   .analysis-line-item {
+    @include span-columns(9 of 9);
     .block-third {
       @include span-columns(3 of 9);
     }
@@ -131,6 +132,7 @@ div.container {
     display: inline;
     margin-bottom: 1em;
     .summary-line-item {
+      @include span-columns(9 of 9);
       .detail-block {
         @include span-columns(4 of 9);
       }
