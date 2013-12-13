@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
+  #layout "mobile_layout", only: [:mobile]
 
   # GET /transactions
   # GET /transactions.json
@@ -10,10 +11,16 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def mobile
+    @transaction = Transaction.new  
+    render layout: "mobile_layout"
+  end
+
   # GET /transactions/1
   # GET /transactions/1.json
   def show
   end
+
 
   # GET /transactions/new
   def new

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CashZen</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+    <header class="banner">
+        <h1 class="title text-center">CashZen</h1>
+        <div class="nav-action text-center"><%= link_to "Account", user_path(current_user) %> / <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p> 
+    </header>
+    <article class="content">
+        <%= yield %>
+    </article>
+</div>
+</body>
+</html>

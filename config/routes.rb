@@ -6,7 +6,9 @@ Cashzen::Application.routes.draw do
   end
   get 'budgets/:year/:month', to: 'budgets#summary_by_month', as: :summary_by_month
 
+  get 'transactions/mobile', to: 'transactions#mobile', as: :mobile_transaction_path  
   resources :transactions
+  
 
   resources :categories do
     collection do
