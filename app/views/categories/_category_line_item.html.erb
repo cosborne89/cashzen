@@ -1,0 +1,6 @@
+<% local_categories.each do |category| %>
+	<div class="column-line-item">
+        <div class="column"><%= link_to category.title, category %></div>
+        <div class="column"><%= number_to_currency(category.monthly_spend) %></div>
+    </div>
+<% end %>

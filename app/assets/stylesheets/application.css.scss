@@ -52,11 +52,11 @@ footer, .push {
   }
 }
 
-.block-title {
+.blue-block-title {
   background-color: #5B80C2;
   padding: .2em;
 }
-.block-body {
+.blue-block-body {
   background-color: #EBEFF7;
   display: block;
 }
@@ -169,8 +169,13 @@ div.container {
 
 
 #budget-analysis {
+  .block-detail {
+    @include span-columns(9 of 9);
+    padding-bottom: .5em;
+  }
   .analysis-line-item {
     @include span-columns(9 of 9);
+    padding: .5em 0 0 .75em;
     .block-third {
       @include span-columns(3 of 9);
     }
@@ -184,28 +189,31 @@ div.container {
     margin: .25em 0;
     color: white;
   }
+
 }
 
 #summary_analysis {
   .block-class {
+    .block-detail {
+      @include span-columns(9 of 9);
+      padding-bottom: .5em;
+    }
     display: inline;
     margin-bottom: 1em;
-    .summary-line-item {
+    .column-line-item {
       @include span-columns(9 of 9);
-      .detail-block {
+      padding: .5em 0 0 .75em;
+      .column {
         @include span-columns(4 of 9);
       }
     }
-    .new-cat-empty {
-      @include span-columns(4 of 9);
+    .new-cat-empty, .new-cat-present {
+      @include span-columns(4 of 4);
       margin-right: 0;
+      padding: .5em 0 0 0;
+      padding-left: .75em;
       display: block;
     }
-    .new-cat-present {
-        @include span-columns(4 of 4);
-        margin-right: 0;
-        display: block;
-      }
   }
   .summary-block-full-container {
     display: block;
@@ -261,6 +269,7 @@ div.container {
     margin-bottom: 1em; 
     .category-detail {
       @include span-columns(9 of 9);
+      padding-bottom: .5em;
     }
     h3 {
       font-weight: 400;
@@ -274,6 +283,7 @@ div.container {
     }
     .column-line-item {
     @include span-columns(9 of 9);
+    padding: .5em .75em 0 .75em;
       .column {
         @include span-columns(2 of 9);
       }

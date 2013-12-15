@@ -1,7 +1,9 @@
-
-<% local_categories.each do |category| %>
-	<div class="summary-line-item">
-        <div class="detail-block"><%= link_to category.title, category %></div>
-        <div class="detail-block"><%= number_to_currency(category.monthly_spend) %></div>
-    </div>
-<% end %>
+<div class="blue-block-title"><h3><%= block_title %></h3></div>
+<div class="blue-block-body block-detail">
+    <% unless local_categories.blank? %>
+        <%= render 'category_line_item', :local_categories => local_categories %>
+        <div class="new-cat-present"><%= link_to "Add another category.", new_category_path(:classification => classification_title ) %></div>
+    <% else %>
+        <div class="new-cat-empty">No categories here yet. <%= link_to "Add one now.", new_category_path(:classification => classification_title) %></div>
+    <% end %>
+</div>
