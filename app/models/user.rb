@@ -4,6 +4,13 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
+  
+  has_many :categories
+  has_many :budgets, :through => :categories
+  has_many :transactions, :through => :categories
+
+  before_save :new_user_is_user
+
 
 
   ROLES = %w[user admin superadmin]
@@ -17,16 +24,17 @@ class User < ActiveRecord::Base
 
     unless user
         user = User.create(username: data["name"],
-        		   email: data["email"],
-	    		   password: Devise.friendly_token[0,20],
+               email: data["email"],
+             password: Devise.friendly_token[0,20],
                    role: "user"
-	    		  )
+            )
     end
     user
-    end
+  end
+
+  def new_user_is_user
+    self.role = "user" unless self.role
+    #a note, in a form you can set the role with   <%#= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+  end
   
-  
-   has_many :categories
-   has_many :budgets, :through => :categories
-   has_many :transactions, :through => :categories
 end

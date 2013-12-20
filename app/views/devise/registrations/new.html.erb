@@ -1,22 +1,21 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "pure-form"}) do |f| %>
+  <div class="devise-errors"><%= devise_error_messages! %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div class="login-line-item"><%= f.email_field :email, :autofocus => true, :class => "login-form", placeholder: "email" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="login-line-item"><%= f.password_field :password, :class => "login-form", placeholder: "password" %></div>
+
+  <div class="login-line-item"><%= f.password_field :password_confirmation, :class => "login-form", placeholder: "password confirmation" %></div>
   
-  <div>Set Role<br />
-  <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
-  </div>
-
-  <div><%= f.submit "Sign up" %></div>
+  <div class="button-separator"><%= f.submit "Sign up", :class => "two-centered-on-twelve two-twelve-button button is-success" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<div class="learn-more">
+	<h2>Not convinced? <%= link_to "Learn more.", "/setup_201" %></h2>
+	<h2>Never budgeted? <%= link_to "Start Here.", "/budget_101" %></h2>
+</div>

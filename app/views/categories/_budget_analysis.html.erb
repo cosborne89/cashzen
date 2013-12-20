@@ -96,6 +96,16 @@
                     <%= number_to_percentage(@saves*100) %></div>
             </div>
         <% end %>
+    <div class="analysis-line-item">
+        <div class="block-third"><b>CashZen Score</b></div>
+        <div class="block-third text-center">
+            <% if @cashzen_score_denom %>
+                <%= number_to_percentage(@cashzen_score.to_f/@cashzen_score_denom.to_f*100, strip_insignificant_zeros: true) %>
+            <% else %>
+                Score not available
+            <% end %>
+        </div>
+    </div>
     </div>
 </div>
 <% end %>

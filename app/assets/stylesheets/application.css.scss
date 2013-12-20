@@ -41,6 +41,7 @@ footer, .push {
   @include outer-container;
   .column {
     @include span-columns(4 of 12);
+    padding-bottom: 25px;
     p {
       padding-left: 1em;
       }
@@ -100,6 +101,10 @@ div.container {
     .login-line-item {
       margin: .5em;
     }
+    .learn-more {
+      margin-top: 1.5em;
+      @include span-columns(12 of 12);
+    }
   }
   .content {
   	@include span-columns(9 of 12);
@@ -113,21 +118,33 @@ div.container {
         @include shift(5);
       }
   }
-  .global-transaction-form {
+  aside {
   	@include span-columns(3 of 12);
   	float: right;
   	display: inline-block;
+    .global-transaction-form, #help-links {
+    @include span-columns(3 of 3);
+      .button {
+        margin-bottom: 1em;
+        margin-top: .5em;
+      }
+    }
+    #help-links {
+      .link-line-item {
+        @include span-columns(3 of 3);
+      }
+    }
     .left {
       @include span-columns(1 of 3);
       margin-right: 0;
     }
     .right {
-      @include span-columns(2 of 3);
-      margin-right: 0;
-      text-align: right;
-      #transaction_category_id {
-        max-width: 95%;
+      @include span-columns(3 of 3);
+      input, select {
+        @include span-columns(3 of 3);
       }
+      margin: .5em 0 0 0;
+      text-align: right;
     }
   }
 }
@@ -139,6 +156,10 @@ div.container {
 
 .two-two-button {
   @include span-columns(2 of 2);
+}
+
+.three-three-button {
+  @include span-columns(3 of 3);
 }
 
 .page-title-inline {
@@ -169,6 +190,7 @@ div.container {
 
 
 #budget-analysis {
+  @include span-columns(9 of 9);
   .block-detail {
     @include span-columns(9 of 9);
     padding-bottom: .5em;
@@ -189,52 +211,53 @@ div.container {
     margin: .25em 0;
     color: white;
   }
-
 }
 
-#summary_analysis {
-  .block-class {
-    .block-detail {
-      @include span-columns(9 of 9);
-      padding-bottom: .5em;
-    }
-    display: inline;
-    margin-bottom: 1em;
-    .column-line-item {
-      @include span-columns(9 of 9);
-      padding: .5em 0 0 .75em;
-      .column {
-        @include span-columns(4 of 9);
+#category-index {
+  @include span-columns(9 of 9);
+  #summary_analysis {
+    .block-class {
+      .block-detail {
+        @include span-columns(9 of 9);
+        padding-bottom: .5em;
+      }
+      display: inline;
+      margin-bottom: 1em;
+      .column-line-item {
+        @include span-columns(9 of 9);
+        padding: .5em 0 0 .75em;
+        .column {
+          @include span-columns(4 of 9);
+        }
+      }
+      .new-cat-empty, .new-cat-present {
+        @include span-columns(4 of 4);
+        margin-right: 0;
+        padding: .5em 0 0 .75em;
+        display: block;
       }
     }
-    .new-cat-empty, .new-cat-present {
-      @include span-columns(4 of 4);
-      margin-right: 0;
-      padding: .5em 0 0 0;
-      padding-left: .75em;
+    .summary-block-full-container {
       display: block;
+      @include span-columns(9 of 9);
     }
-  }
-  .summary-block-full-container {
-    display: block;
-    @include span-columns(9 of 9);
-  }
-  .summary-block-half {
-    @include span-columns(4 of 9);
-    display: inline-block;
-  }
-  .summary-block-full {
-    @include span-columns(9 of 9);
-  }
-  .second-half {
-    margin-right: 0;
-    @include shift(1);
-  }
-  h3 {
-    font-weight: 400;
-    padding-left: .5em;
-    margin: .25em 0;
-    color: white;
+    .summary-block-half {
+      @include span-columns(4 of 9);
+      display: inline-block;
+    }
+    .summary-block-full {
+      @include span-columns(9 of 9);
+    }
+    .second-half {
+      margin-right: 0;
+      @include shift(1);
+    }
+    h3 {
+      font-weight: 400;
+      padding-left: .5em;
+      margin: .25em 0;
+      color: white;
+    }
   }
 }
 
@@ -244,6 +267,27 @@ div.container {
   margin-right: 0;
     .block-section {
       @include span-columns(4 of 9);
+      .block-title {
+        color: white;
+        h3 {
+          margin: 0;
+          padding: .25em .25em .25em .5em;
+          font-weight: 400;
+        }
+      }
+      .block-detail {
+        @include span-columns(4 of 4);
+        padding-bottom: .5em;
+        margin-bottom: .5em;
+        .column-line-item {
+          @include span-columns(4 of 4);
+          .column {
+            @include span-columns(2 of 4);
+            padding: .5em 0 0 .75em;
+            margin-right: 0;
+          }
+        }
+      }
       h4 {
         font-weight: 400;
       }
@@ -295,15 +339,45 @@ div.container {
 }
 
 .transactions-block {
-  h4 {
+  .title-block {
+    @include span-columns(9 of 9);
+    color: white;
     font-weight: 400;
   }
-  .column-line-item {
-  display: block;
-  @include span-columns(9 of 9);
-    .column {
-      @include span-columns(2 of 9);
-      display: inline-block;
+  h4, h3 {
+    font-weight: 400;
+    margin: 0;
+    padding-left: .5em;
+    margin: .25em 0;
+  }
+  .detail-block {
+    @include span-columns(9 of 9);
+    padding-bottom: .75em;
+    .in-block-center {
+      text-align: center;
+      @include span-columns(9 of 9);
+      margin-top: 1em;
+    }
+    .column-line-item {
+      padding: .5em .75em 0 .75em;
+      display: block;
+      @include span-columns(9 of 9);
+      h4 {
+        padding: 0;
+        margin: 0;
+      }
+      .wide-column {
+        @include span-columns(3 of 9);
+        display: inline-block;
+      }
+      .column {
+        @include span-columns(2 of 9);
+        display: inline-block;
+      }
+      .right {
+        text-align: right;
+        padding-right: 1em;
+      }
     }
   }
 }

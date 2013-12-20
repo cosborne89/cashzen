@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CashZen</title>
+  <%= include_gon %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300" %>
+  <%= stylesheet_link_tag "http://yui.yahooapis.com/pure/0.3.0/forms-min.css" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container wrapper">
+    <header class="banner">
+        <h1 class="title text-center"><%= link_to "CashZen", root_path %></h1>
+        <div id="notices">
+          <% if notice %>
+            <p class="notice"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert"><%= alert %></p> 
+          <% end %>
+        </div>
+    </header>
+    <article class="content how-it-works">
+        <%= yield %>
+    </article>
+</div>
+<%= render 'layouts/footer' %>
+
+</body>
+</html>

@@ -1,1 +1,0 @@
-{"ts":1378918623667,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"json.array!(@categories) do |category|\n  json.extract! category, :title, :monthly_spend, :transaction_ids, :reset_on, :net_cash, :user_id, :spree\n  json.url category_url(category, format: :json)\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":199}]],"length":199}

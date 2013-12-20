@@ -1,4 +1,4 @@
-<%= form_for(@transaction) do |f| %>
+<%= form_for(@transaction, :html => {:class => "pure-form"})  do |f| %>
   <% if @transaction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
@@ -12,23 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, placeholder: "Title" %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.select :category_id, grouped_options_for_select(Category.for_select) %>
+    <%= f.select :category_id, grouped_options_for_select(Category.for_select(current_user.id)) %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.text_field :raw_amount %>
+    <%= f.text_field :raw_amount, placeholder: "Amount (or equation)" %>
   </div>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Transaction", :class => "three-nine-button button is-success" %>
   </div>
 <% end %>
+
+

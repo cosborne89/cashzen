@@ -2,6 +2,8 @@ class Budget < ActiveRecord::Base
     has_many :transactions, :dependent => :destroy
     belongs_to :category
     belongs_to :user
+
+    accepts_nested_attributes_for :transactions, :allow_destroy => true
     
     before_save :update_remaining
     before_save :set_date_from_month_and_year

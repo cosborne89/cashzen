@@ -1,7 +1,7 @@
-<%= form_for(@transaction) do |f| %>
+<%= form_for(@transaction, :html => {:class => "pure-form"}) do |f| %>
   <% if @transaction.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+      <h2>Oops! Something didn't work out</h2>
 
       <ul>
       <% @transaction.errors.full_messages.each do |msg| %>
@@ -25,10 +25,12 @@
     <% end %>
   </div>
   <div class="field">
-    <%# if @transaction.date %>
-
-    <%= f.label :date %><br>
-    <%= f.text_field :input_date, class: "datepicker", value: @transaction.date.strftime('%m/%d/%Y')  %>
+    <% if @transaction.date %>
+      <%= f.label :date %><br>
+      <%= f.text_field :input_date, class: "datepicker", value: @transaction.date.strftime('%m/%d/%Y')  %>
+    <% else %>
+      <%= f.text_field :input_date, value: Date.today.strftime("%m/%d/%Y"), class: "datepicker"  %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :amount %><br>
@@ -36,6 +38,6 @@
   </div>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Transaction", :class => "three-nine-button button is-success" %>
   </div>
 <% end %>

@@ -1,34 +1,36 @@
 <%= render 'budget_analysis' %>
-<h1>Spending Settings</h1>
-<p><em>This is the amount you have budgeted for each category.</em></p>
-<div id="summary_analysis" class="block-container">
-    <div class="block-class summary-block-full">
-        <%= render 'summary_by_classification', block_title: "Monthly Income", classification_title: "Income", local_categories: @categories.income %>
-    </div>
-
-    <div class="block-class block-body summary-block-full">
-        <%= render 'summary_by_classification', block_title: "Variable Monthly Expenses", classification_title: "Variable Expense", local_categories: @categories.variable %>
-    </div>
-
-    <div class="summary-block-full-container">
-        <div class="block-class block-body summary-block-half">
-            <%= render 'summary_by_classification', block_title: "Fixed Expenses", classification_title: "Fixed Expense", local_categories: @categories.fixed %>
+<div id="category-index">
+    <h1>Spending Settings</h1>
+    <p><em>This is the amount you have budgeted for each category.</em></p>
+    <div id="summary_analysis" class="block-container">
+        <div class="block-class summary-block-full">
+            <%= render 'summary_by_classification', block_title: "Monthly Income", classification_title: "Income", local_categories: @categories.income %>
         </div>
 
-        <div class="block-class block-body summary-block-half second-half">
-            <%= render 'summary_by_classification', block_title: "Occasional Expenses", classification_title: "Occasional Expense", local_categories: @categories.occasional %>
-        </div>
-    </div>
-
-    <div class="summary-block-full-container">
-        <div class="block-class block-body summary-block-half">
-            <%= render 'summary_by_classification', block_title: "Debt Payments", classification_title: "Debt Payment", local_categories: @categories.debt %>
+        <div class="block-class block-body summary-block-full">
+            <%= render 'summary_by_classification', block_title: "Variable Monthly Expenses", classification_title: "Variable Expense", local_categories: @categories.variable %>
         </div>
 
+        <div class="summary-block-full-container">
+            <div class="block-class block-body summary-block-half">
+                <%= render 'summary_by_classification', block_title: "Fixed Expenses", classification_title: "Fixed Expense", local_categories: @categories.fixed %>
+            </div>
+
+            <div class="block-class block-body summary-block-half second-half">
+                <%= render 'summary_by_classification', block_title: "Occasional Expenses", classification_title: "Occasional Expense", local_categories: @categories.occasional %>
+            </div>
+        </div>
+
+        <div class="summary-block-full-container">
+            <div class="block-class block-body summary-block-half">
+                <%= render 'summary_by_classification', block_title: "Debt Payments", classification_title: "Debt Payment", local_categories: @categories.debt %>
+            </div>
 
 
-        <div class="block-class block-body summary-block-half second-half">
-            <%= render 'summary_by_classification', block_title: "Monthly Savings", classification_title: "Transfer to Savings", local_categories: @categories.savings %>
+
+            <div class="block-class block-body summary-block-half second-half">
+                <%= render 'summary_by_classification', block_title: "Monthly Savings", classification_title: "Transfer to Savings", local_categories: @categories.savings %>
+            </div>
         </div>
     </div>
 </div>

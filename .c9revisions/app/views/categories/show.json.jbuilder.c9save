@@ -1,1 +1,0 @@
-{"ts":1378918687536,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"json.extract! @category, :title, :monthly_spend, :transaction_ids, :reset_on, :net_cash, :user_id, :spree, :created_at, :updated_at\n"]],"start1":0,"start2":0,"length1":0,"length2":132}]],"length":132}

@@ -7,13 +7,18 @@ class TransactionsController < ApplicationController
   # GET /transactions.json
   def index
     if current_user.transactions.exists?
-      @transactions = current_user.transactions.order(date: :asc).paginate(:page => params[:page], :per_page => 30)
+      @transactions = current_user.transactions.order(date: :desc).paginate(:page => params[:page], :per_page => 15)
     end
   end
 
   def mobile
     @transaction = Transaction.new  
     render layout: "mobile_layout"
+  end
+
+
+  def multiadd
+    @transaction = Transaction.new
   end
 
   # GET /transactions/1

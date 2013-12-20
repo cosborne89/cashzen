@@ -62,6 +62,11 @@ class BudgetsController < ApplicationController
   def edit
   end
 
+  def multiadd
+    @budget = current_user.budgets.first
+    5.times { @budget.transactions.build}
+  end
+
   # POST /budgets
   # POST /budgets.json
   def create

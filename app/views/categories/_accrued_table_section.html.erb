@@ -1,10 +1,14 @@
-<div class="left"><h4>Category</h4></div>
-<div class="right text-right"><h4>Saved Over Time</h4></div>
-<% if local_categories.exists? %>
-	<% local_categories.each do |category| %>
-    	<div class="left"><%= link_to category.title, category %></div>
-    	<div class="right text-right"><%= number_to_currency(category.budgets.to_a.sum(&:remaining)) %></div>
+<div class="blue-block-body block-detail">
+	<% if local_categories.exists? %>
+		<% local_categories.each do |category| %>
+		<div class="column-line-item">
+	    	<div class="column"><%= link_to category.title, category %></div>
+	    	<div class="column text-right"><%= number_to_currency(category.budgets.to_a.sum(&:remaining)) %></div>
+	    </div>
+		<% end %>
+	<% else %>
+		<div class="column-line-item">
+			<div class="column">No accrued savings</div>
+		</div>
 	<% end %>
-<% else %>
-	<div class="left"><p>No accrued savings</p></div>
-<% end %>
+</div>

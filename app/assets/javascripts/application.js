@@ -18,14 +18,3 @@
 //= require jquery.flot.pie
 //= require turbolinks
 //= require_tree .
-
-
-$(function() {
-  $(".datepicker").datepicker({
-    dateFormat: 'mm/dd/yy',
-    altFormat: 'dd/mm/yy',
-    changeMonth: true,
-    changeYear: true,
-    yearRange: '-5:+5'
-	});
-});

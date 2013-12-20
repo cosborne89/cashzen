@@ -12,7 +12,7 @@
 <body>
 <div class="container wrapper">
     <header class="banner">
-        <h1 class="title text-center">CashZen</h1>
+        <h1 class="title text-center"><%= link_to "CashZen", root_path %></h1>
         <%= render 'layouts/nav_actions' if user_signed_in? %>
         <div id="notices">
           <% if notice %>
@@ -26,8 +26,11 @@
     <article class="content">
         <%= yield %>
     </article>
-    <aside class="global-transaction-form">
-      <%= render 'layouts/build_transaction' if user_signed_in? %>
+    <aside>
+      <div class="global-transaction-form">
+        <%= render 'layouts/build_transaction' if user_signed_in? %>
+      </div>
+        <%= render 'layouts/help_links' %>
     </aside>
 </div>
 <%= render 'layouts/footer' %>

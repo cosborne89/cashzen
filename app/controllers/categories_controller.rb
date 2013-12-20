@@ -6,6 +6,8 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = current_user.categories
+    @cashzen_score = 0
+    @cashzen_score_denom = 0
     @years = []
     @months = []
     @categories.each do |category|
@@ -19,13 +21,49 @@ class CategoriesController < ApplicationController
     @months = @months.uniq.map(&:to_i).sort
     @balance =  @categories.income.to_a.sum(&:monthly_spend) - @categories.not_income.to_a.sum(&:monthly_spend) unless @categories.income.blank?
     unless @categories.income.blank?
-      @debt_to_income = @categories.debt.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend) unless @categories.debt.blank?
+      @debt_to_income = @categories.debt.needs.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend) unless @categories.debt.needs.blank?
       @savings_to_income = @categories.savings.to_a.sum(&:monthly_spend)/@categories.income.to_a.sum(&:monthly_spend) unless @categories.savings.blank?
     end
     unless @categories.not_income.blank?
         @needs = (@categories.not_income.needs.to_a.sum(&:monthly_spend))/@categories.not_income.to_a.sum(&:monthly_spend) unless @categories.needs.blank?
         @wants = @categories.wants.to_a.sum(&:monthly_spend)/@categories.not_income.to_a.sum(&:monthly_spend) unless @categories.wants.blank?
         @saves = @categories.saves.to_a.sum(&:monthly_spend)/@categories.not_income.to_a.sum(&:monthly_spend) unless @categories.saves.blank?
+    end
+    if @balance 
+      @cashzen_score_denom += 1
+      if @balance >= 0
+        @cashzen_score += 1
+      end
+    end
+    if @debt_to_income 
+      @cashzen_score_denom += 1
+      if @debt_to_income < 0.36
+        @cashzen_score += 1
+      end
+    end
+    if @savings_to_income 
+      @cashzen_score_denom += 1
+      if @savings_to_income > 0.15
+        @cashzen_score += 1
+      end
+    end
+    if @needs 
+      @cashzen_score_denom += 1
+      if @needs < 0.5
+        @cashzen_score += 1
+      end
+    end
+    if @wants 
+      @cashzen_score_denom += 1
+      if @wants < 0.3
+        @cashzen_score += 1
+      end
+    end
+    if @saves 
+      @cashzen_score_denom += 1
+      if @saves > 0.2
+        @cashzen_score += 1
+      end
     end
   end
   
@@ -88,6 +126,7 @@ class CategoriesController < ApplicationController
         @category = Category.new
       end
   end
+
 
   # GET /categories/1/edit
   def edit

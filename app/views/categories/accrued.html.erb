@@ -3,29 +3,39 @@
 	<p><em>Your occasional expenses accrue over time so that when the time comes for a big spend you have already put away money.</em></p>
 	<div class="block-organizer">
 		<div class="block-section"%>
-			<h2>Variable Monthly Expenses</h2>
+			<div class="blue-block-title block-title">
+				<h3>Variable Monthly Expenses</h3>
+			</div>
 			<%= render 'accrued_table_section', :local_categories => @categories.variable %>
 		</div>
 
 		<div class="block-section block-right"%>
-			<h2>Fixed Monthly Expenses</h2>
+			<div class="blue-block-title block-title">
+				<h3>Fixed Monthly Expenses</h3>
+			</div>
 			<%= render 'accrued_table_section', :local_categories => @categories.fixed %>
 		</div>
 	</div>
 	<div class="block-organizer">
 		<div class="block-section"%>
-			<h2>Occasional Expenses</h2>
+			<div class="blue-block-title block-title">
+				<h3>Occasional Expenses</h3>
+			</div>
 			<%= render 'accrued_table_section', :local_categories => @categories.occasional %>
 		</div>
 
 		<div class="block-section block-right"%>
-			<h2>Monthly Debt Payments</h2>
+			<div class="blue-block-title block-title">
+				<h3>Monthly Debt Payments</h3>
+			</div>
 			<%= render 'accrued_table_section', :local_categories => @categories.debt %>
 		</div>
 	</div>
 	<div class="block-organizer">
 		<div class="block-section"%>
-			<h2>Monthly Savings</h2>
+			<div class="blue-block-title block-title">
+				<h3>Monthly Savings</h3>
+			</div>
 			<%= render 'accrued_table_section', :local_categories => @categories.savings %>
 		</div>
 	</div>

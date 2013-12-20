@@ -2,6 +2,7 @@ class Category < ActiveRecord::Base
     belongs_to :user
     has_many :budgets, :dependent => :destroy
     has_many :transactions, :through => :budgets
+    accepts_nested_attributes_for :transactions, :allow_destroy => true
     
 
     scope :fixed, -> { where(classification: "Fixed Expense").order(monthly_spend: :desc) }

@@ -1,7 +1,7 @@
 <div class="block-container nav-actions">
-    <div class="nav-action text-center"><%=link_to "Summary & Analytics", categories_path %></div>
-    <div class="nav-action text-center"><%=link_to "Saved Over Time", accrued_categories_path %></div>
-    <div class="nav-action text-center"><%=link_to "Spending this Month", budgets_path %></div>
-    <div class="nav-action text-center"><%=link_to "Transactions", transactions_path %></div>
+    <div class="nav-action text-center"><%= link_to "Summary & Analytics", categories_path %></div>
+    <div class="nav-action text-center"><%= link_to "Spending this Month", budgets_path %></div>
+    <div class="nav-action text-center"><%= link_to "Transactions", transactions_path %></div>
+    <div class="nav-action text-center"><%= link_to "Saved Over Time", accrued_categories_path %></div>
     <div class="nav-action text-center"><%= link_to "Account", user_path(current_user) %> / <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </div>
 </div>

@@ -1,1 +1,0 @@
-{"ts":1378831078235,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>New transaction</h1>\n\n<%= render 'form' %>\n\n<%= link_to 'Back', transactions_path %>\n"]],"start1":0,"start2":0,"length1":0,"length2":89}]],"length":89}

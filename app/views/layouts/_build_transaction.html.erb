@@ -1,7 +1,7 @@
 <%= form_for(@build_transaction, :html => {:class => "pure-form"}) do |f| %>
   <% if @build_transaction.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@build_transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+      <h2>Oops! Something didn't work out</h2>
 
       <ul>
       <% @build_transaction.errors.full_messages.each do |msg| %>
@@ -11,34 +11,20 @@
     </div>
   <% end %>
 
+
   <div id="quickadd">
     <h2>Quick Transaction</h2>
-    <div class="left">
-      <%= f.label :title %>
-    </div>
     <div class="right">
       <%= f.text_field :title, placeholder: "Title" %>
     </div>
-    <div class="left">
-      <%= f.label :category %>
-    </div>
     <div class="right">
     <%= f.select :category_id, grouped_options_for_select(Category.for_select(current_user.id)) %>
-
-      <%#= f.grouped_collection_select(:transaction, :category_id, current_user.categories, :classification, :title, :id, :title)%>
-      <%#= f.select :category_id, current_user.categories.order("title ASC").map { |category| [category.title, category.id] }, :include_blank => true %>
-    </div>
-    <div class="left">
-      <%= f.label :date %>
     </div>
     <div class="right">
       <%= f.text_field :input_date, value: Date.today.strftime("%m/%d/%Y"), class: "datepicker"  %>
     </div>
-    <div class="left">
-      <%= f.label :amount %>
-    </div>
     <div class="right">
-      <%= f.text_field :raw_amount, placeholder: "Amount" %>
+      <%= f.text_field :raw_amount, placeholder: "Amount (or equation)" %>
     </div>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.submit "Add Transaction", :class => "three-three-button button is-success" %>

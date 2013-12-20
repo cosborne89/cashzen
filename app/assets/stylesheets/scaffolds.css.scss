@@ -19,8 +19,7 @@ a {
     color: #666;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #5B80C2;
   }
 }
 
@@ -65,31 +64,38 @@ div {
   text-align: center;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+  margin-bottom: 1.5em;
   h2 {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
+    border-radius: 2px;
     font-size: 12px;
-    margin: -7px;
     margin-bottom: 0px;
     background-color: #c00;
     color: #fff;
   }
-  ul li {
-    font-size: 12px;
-    list-style: square;
+  ul {
+    margin: .25em 0 0 0;
+    padding-left: 0;
+    li {
+      font-size: 12px;
+      list-style: square;
+      background-color: #DDB332;
+      border-radius: 2px;
+      color: white;
+      padding: .2em 1em;
+    }
   }
+}
+
+.devise-errors #error_explanation {
+  margin: auto;
+  margin-bottom: 1.5em;
+  width: 50%;
+  h2 {
+    text-align: center;
+    }
+
 }

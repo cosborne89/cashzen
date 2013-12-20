@@ -7,6 +7,7 @@ Cashzen::Application.routes.draw do
   get 'budgets/:year/:month', to: 'budgets#summary_by_month', as: :summary_by_month
 
   get 'transactions/mobile', to: 'transactions#mobile', as: :mobile_transaction_path  
+
   resources :transactions
   
 
@@ -39,12 +40,22 @@ Cashzen::Application.routes.draw do
 devise_scope :user do
   root to: "devise/sessions#new"
 end
-     get "/welcome" => "pages#welcome"
-     get "/about" => "pages#about"
-     get "/contact" => "pages#contact"
-     get "/legal" => "pages#legal"
-     get "/terms" => "pages#terms"
-     get "/mission" => "pages#mission"
+
+  get "/welcome" => "pages#welcome"
+  get "/about" => "pages#about"
+  get "/contact" => "pages#contact"
+  get "/legal" => "pages#legal"
+  get "/terms" => "pages#terms"
+  get "/mission" => "pages#mission"
+
+  get "/budget_101" => "learn#budget_101"
+  get "/budget_102" => "learn#budget_102"
+  get "/personal_finance_151" => "learn#personal_finance_151"
+  get "/personal_finance_152" => "learn#personal_finance_152"
+  get "/setup_201" => "learn#setup_201"
+  get "/setup_202" => "learn#setup_202"
+  get "/tips" => "learn#tips"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

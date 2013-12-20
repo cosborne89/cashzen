@@ -1,25 +1,30 @@
 <div class="transactions-block">
-  <% if transactions %>
+  <div class="title-block blue-block-title"><h3><%= trans_title %></h3></div>
+  <div class="detail-block blue-block-body">
     <div class="column-line-item">
-      <div class="column"><h4>Title</h4></div>
+      <div class="wide-column"><h4>Transaction</h4></div>
       <% if show_category %>
         <div class="column"><h4>Category</h4></div>
       <% end %>
-      <div class="column"><h4>Date</h4></div>
-      <div class="column"><h4>Amount</h4></div>
+      <div class="column right"><h4>Date</h4></div>
+      <div class="column right"><h4>Amount</h4></div>
     </div>
-    <% transactions.each do |transaction| %>
-      <div class="column-line-item">
-          <div class="column"><%= link_to transaction.title, transaction %> ( <%= link_to 'X', transaction, method: :delete, data: { confirm: 'Are you sure?' } %> )</div>
-          <% if show_category %>
-            <div class="column"><%= transaction.category.title %></div>
-          <% end %>
-          <div class="column"><%= transaction.date %></div>
-          <div class="column"><%= number_to_currency(transaction.amount) %></div>
-      </div>
+    <% if transactions %>
+      <% transactions.each do |transaction| %>
+        <div class="column-line-item">
+            <div class="wide-column"><%= link_to transaction.title, transaction %> ( <%= link_to 'X', transaction, method: :delete, data: { confirm: 'Are you sure?' } %> )</div>
+            <% if show_category %>
+              <div class="column"><%= transaction.category.title %></div>
+            <% end %>
+            <div class="column right"><%= transaction.date.strftime("%m / %d") %></div>
+            <div class="column right"><%= number_to_currency(transaction.amount) %></div>
+        </div>
+      <% end %>
+    <div class="in-block-center">
+      <%= will_paginate transactions %>
+    </div>
+    <% else %>
+    <h3>No transactions yet. <%= link_to "Add one now.", new_transaction_path %></h3>
     <% end %>
-  <%= will_paginate transactions %>
-  <% else %>
-  <h3>No transactions yet. <%= link_to "Add one now.", new_transaction_path %></h3>
-  <% end %>
+  </div>
 </div>
