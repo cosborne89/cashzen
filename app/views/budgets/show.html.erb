@@ -24,7 +24,7 @@
   <%= @budget.date.strftime("%B %Y")%>
 </p>
 
-<%= render 'transactions/transaction_table', transactions: @transactions, show_category: false %>
+<%= render 'transactions/transaction_table', transactions: @transactions, trans_title: "Transactions", show_category: false %>
 
 <%= link_to 'Edit', edit_budget_path(@budget) %> |
 <%= link_to 'Back', budgets_path %>

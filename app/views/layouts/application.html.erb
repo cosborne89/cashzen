@@ -23,13 +23,15 @@
           <% end %>
         </div>
     </header>
-    <article class="content">
-        <%= yield %>
-    </article>
     <aside>
       <div class="global-transaction-form">
         <%= render 'layouts/build_transaction' if user_signed_in? %>
       </div>
+    </aside>
+    <article class="content">
+        <%= yield %>
+    </article>
+    <aside>
         <%= render 'layouts/help_links' %>
     </aside>
 </div>

@@ -11,7 +11,11 @@
         <h4>Budgeted</h4>
       </div>
       <div class="column text-right">
-        <h4>Spent</h4>
+        <% if cat_title == "Income" %>
+          <h4>Deposited</h4>
+        <% else %>
+          <h4>Spent</h4>
+        <% end %>
       </div>
       <div class="column text-right">
         <h4>Remaining</h4>
